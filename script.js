@@ -4,23 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // 平滑滚动功能（更新选择器以匹配新结构）
     document.querySelectorAll('.nav-menu a, .mobile-dropdown a').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const href = this.getAttribute('href');
 
-            // 如果是移动端，关闭下拉菜单
-            const mobileDropdown = document.getElementById('mobileDropdown');
-            if (mobileDropdown && mobileDropdown.classList.contains('active')) {
-                mobileDropdown.classList.remove('active');
-            }
+            // 只处理当前页面的锚点链接（以#开头）
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
 
-            if (targetSection) {
-                // 滚动到目标区域
-                window.scrollTo({
-                    top: targetSection.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+                // 如果是移动端，关闭下拉菜单
+                const mobileDropdown = document.getElementById('mobileDropdown');
+                if (mobileDropdown && mobileDropdown.classList.contains('active')) {
+                    mobileDropdown.classList.remove('active');
+                }
+
+                if (targetSection) {
+                    // 滚动到目标区域
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // 对于指向其他页面的链接（如index.html#projects），允许默认跳转
         });
     });
 
@@ -80,6 +85,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // 咨询按钮点击跳转到合作联系模块
+    const cooperationBtn = document.querySelector('.cooperation-btn');
+    if (cooperationBtn) {
+        cooperationBtn.addEventListener('click', function() {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                window.scrollTo({
+                    top: contactSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
+    // 左上角个人logo点击回到主页顶部
+    const personalLogo = document.querySelector('.personal-logo');
+    if (personalLogo) {
+        personalLogo.addEventListener('click', function() {
+            // 如果是移动端，关闭下拉菜单
+            const mobileDropdown = document.getElementById('mobileDropdown');
+            if (mobileDropdown && mobileDropdown.classList.contains('active')) {
+                mobileDropdown.classList.remove('active');
+            }
+
+            // 滚动到页面顶部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 添加手型光标提示可点击
+        personalLogo.style.cursor = 'pointer';
+    }
+
     // 标题动画（保留原有代码 - 在DOM加载后执行）
     const observerOptions = {
         root: null,
@@ -99,4 +139,68 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.section-title').forEach(title => {
         observer.observe(title);
     });
+
+    // 向上箭头按钮 - 滚动超过300px时显示
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        function checkScroll() {
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            const showThreshold = 300; // 滚动300px后显示
+
+            if (scrollPosition > showThreshold) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        }
+
+        // 初始检查和滚动监听
+        checkScroll();
+        window.addEventListener('scroll', checkScroll);
+
+        // 点击按钮回到顶部
+        backToTopBtn.addEventListener('click', function() {
+            // 如果是移动端，关闭下拉菜单
+            const mobileDropdown = document.getElementById('mobileDropdown');
+            if (mobileDropdown && mobileDropdown.classList.contains('active')) {
+                mobileDropdown.classList.remove('active');
+            }
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // 滚动时隐藏/显示顶部导航栏（超过900px时隐藏）
+    const topNavbar = document.querySelector('.top-navbar');
+    if (topNavbar) {
+        let ticking = false;
+
+        function handleNavbarVisibility() {
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            const hideThreshold = 900; // 滚动超过900px时隐藏
+
+            if (scrollPosition > hideThreshold) {
+                topNavbar.classList.add('hidden');
+            } else {
+                topNavbar.classList.remove('hidden');
+            }
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    handleNavbarVisibility();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        // 初始检查和滚动监听
+        handleNavbarVisibility();
+        window.addEventListener('scroll', onScroll);
+    }
 });
