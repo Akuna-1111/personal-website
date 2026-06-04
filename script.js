@@ -109,11 +109,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileDropdown.classList.remove('active');
             }
 
-            // 滚动到页面顶部
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // 检查当前页面是否是主页（index.html）
+            const currentPage = window.location.pathname;
+            const isHomePage = currentPage.endsWith('index.html') ||
+                               currentPage.endsWith('/') ||
+                               currentPage === '' ||
+                               currentPage.endsWith('index.htm');
+
+            if (isHomePage) {
+                // 如果已经在主页，平滑滚动到顶部
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                // 如果不在主页，跳转到主页顶部
+                window.location.href = 'index.html';
+            }
         });
 
         // 添加手型光标提示可点击
@@ -173,14 +185,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 滚动时隐藏/显示顶部导航栏（超过900px时隐藏）
+    // 滚动时隐藏/显示顶部导航栏（超过800px时隐藏）
     const topNavbar = document.querySelector('.top-navbar');
     if (topNavbar) {
         let ticking = false;
 
         function handleNavbarVisibility() {
             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            const hideThreshold = 900; // 滚动超过900px时隐藏
+            const hideThreshold = 800; // 滚动超过800px时隐藏
 
             if (scrollPosition > hideThreshold) {
                 topNavbar.classList.add('hidden');
@@ -203,4 +215,19 @@ document.addEventListener('DOMContentLoaded', function() {
         handleNavbarVisibility();
         window.addEventListener('scroll', onScroll);
     }
+
+    // 滚动揭示动画（关于我页面）
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.timeline-item, .showcase-item, .advantage-card, .edu-item, .cert-list li').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
+
 });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于我 - 设计师作品集</title>
+    <title>关于我 - 郑彬坤</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,33 +40,24 @@
     <!-- 顶部导航栏 -->
     <nav class="top-navbar">
         <div class="nav-container">
-            <!-- 左侧：个人logo和姓名 -->
             <div class="personal-logo">
                 <div class="logo-circle">
                     <span class="logo-letter">Z</span>
                 </div>
                 <span class="logo-name">ZHENG BIN KUN</span>
             </div>
-
-            <!-- 网页端导航菜单 -->
             <div class="nav-menu">
                 <a href="index.html#projects">项目案例</a>
                 <a href="index.html#contact">合作联系</a>
                 <a href="about.html">关于我</a>
             </div>
-
-            <!-- 右侧：定位信息 -->
             <div class="location-marker">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>中国·厦门</span>
             </div>
-
-            <!-- 移动端菜单按钮 -->
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-
-            <!-- 移动端下拉菜单 -->
             <div class="mobile-dropdown" id="mobileDropdown">
                 <a href="index.html#projects">项目案例</a>
                 <a href="index.html#contact">合作联系</a>
@@ -79,115 +70,194 @@
         </div>
     </nav>
 
-    <!-- 关于我内容 -->
-    <main class="project-detail about-page">
-        <div class="container">
-            <!-- 页面标题 -->
-            <h1 class="project-title">关于我</h1>
-
-            <!-- 个人简介 -->
-            <div class="project-overview">
-                <div class="project-main-image">
-                    <img src="https://picsum.photos/id/100/900/400" alt="设计师肖像">
-                </div>
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">姓名</span>
-                        <span class="meta-value">郑彬坤</span>
+    <main class="resume-page">
+        <!-- Hero 头部 -->
+        <section class="resume-hero">
+            <div class="resume-hero-bg"></div>
+            <div class="resume-hero-content">
+                <h1 class="resume-name">郑彬坤</h1>
+                <p class="resume-tagline">统筹 · 设计 · 执行 — 一站式空间营造者</p>
+                <div class="resume-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15<span class="stat-unit">年</span></span>
+                        <span class="stat-label">从业经验</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">从业年限</span>
-                        <span class="meta-value">15年</span>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">设计总监<span class="stat-unit">/经理</span></span>
+                        <span class="stat-label">合作方向</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">所在地</span>
-                        <span class="meta-value">中国·厦门</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">专业领域</span>
-                        <span class="meta-value">空间设计</span>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number"><i class="fas fa-map-marker-alt"></i> 厦门</span>
+                        <span class="stat-label">定居城市</span>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 详细介绍内容 -->
-            <div class="project-content-grid">
-                <!-- 左侧：详细介绍 -->
-                <div class="project-details">
-                    <!-- 核心SKILL和专业背景并排显示 -->
-                    <div class="skills-background-row">
-                        <section class="detail-section">
-                            <h2 class="section-title">核心SKILL</h2>
-                            <div class="section-content">
-                                <ul class="responsibility-list">
-                                    <li><strong>统筹</strong>：全面理解客户需求，综合考虑功能、预算、时间等要素，制定科学合理的设计方案。</li>
-                                    <li><strong>设计</strong>：将概念转化为具体的设计方案，注重空间动线、互动展陈、光线运用、材质搭配和色彩协调。</li>
-                                    <li><strong>执行</strong>：严格把控施工质量，确保设计方案能够精准落地，实现从图纸到实物的完美转化。</li>
+        <!-- 个人优势 -->
+        <section class="resume-section" id="advantages">
+            <h2 class="section-title">个人优势</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>资源整合</h3>
+                    <p>厦门、漳州、上海、西安、昆明、成都、兰州、西安等地区的展览活动搭建、设备租赁、广告制作资源整合能力</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon"><i class="fas fa-tools"></i></div>
+                    <h3>工艺材料</h3>
+                    <p>熟悉展览、活动、工装施工工艺和材料</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI技术前沿</h3>
+                    <p>熟练使用ComfyUI多风格生图及图片编辑，Claude Code开发Web端应用/静态网站/ppt</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>复合经验</h3>
+                    <p>10年+设计经验（景观、商业美陈、活动布置、展览展厅），5年+设计项目及施工管理经验</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 软件技能 -->
+        <section class="resume-section" id="skills">
+            <h2 class="section-title">软件技能</h2>
+            <div class="skills-cloud">
+                <span class="skill-tag highlight">3Ds Max + VR</span>
+                <span class="skill-tag">CAD</span>
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag highlight">Illustrator</span>
+                <span class="skill-tag">SketchUp</span>
+                <span class="skill-tag highlight">PowerPoint</span>
+                <span class="skill-tag">CorelDraw</span>
+                <span class="skill-tag">剪映</span>
+                <span class="skill-tag">ComfyUI</span>
+                <span class="skill-tag">Stable Diffusion WebUI</span>
+                <span class="skill-tag highlight">Claude Code</span>
+                <span class="skill-tag highlight">VS code</span>
+                <span class="skill-tag">Qwen Image</span>
+                <span class="skill-tag">DeepSeek V4 pro</span>
+            </div>
+        </section>
+
+        <!-- 工作经历 - 时间线 -->
+        <section class="resume-section" id="experience">
+            <h2 class="section-title">工作经历</h2>
+            <div class="timeline">
+                <!-- 2021.03-至今 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-period">2021.03 - 至今</div>
+                        <h3 class="timeline-title">设计总监 / 合伙人</h3>
+                        <p class="timeline-company">厦门天其展览服务有限公司</p>
+                        <div class="timeline-body">
+                            <p>负责项目执行统筹与设计管理，兼具资源整合与落地执行能力。主导活动及展会项目全流程：招投标、合同拟定、预算编制、供应商管理、现场搭建。担任项目设计负责人，精准把握客户需求转化为创意方案，指导团队完成3D效果图、主视觉KV、施工图等全套设计输出。</p>
+                            <p>建立多渠道比价机制降低采购成本，前瞻性引入并本地部署AI Agent设计工具（ComfyUI、Stable Diffusion WebUI、Claude Code等），研发室内设计、IP设计、风格转换等工作流，将部分繁琐工作耗时缩短50%以上。</p>
+                            <div class="timeline-highlights">
+                                <span class="highlight-label">核心业绩</span>
+                                <ul>
+                                    <li>主导厦门首个文明实践站（海沧社区）整体改造设计，成为区域示范点</li>
+                                    <li>连续四年（2022-2025）中标福建省商务厅"闽货华夏行"系列巡展项目</li>
+                                    <li>与华西集团合作打造厦门翔安新机场首个项目展厅，成为IP级打卡点</li>
+                                    <li>承接中储粮、建发集团国企文化空间升级项目</li>
+                                    <li>为片仔癀股东大会提供陈列设计技术支持</li>
                                 </ul>
                             </div>
-                        </section>
-
-                        <section class="detail-section">
-                            <h2 class="section-title">专业背景</h2>
-                            <div class="section-content">
-                                <p>2011年毕业于大众传媒职业技术院校环境艺术专业，同年在中南林业科技大学家具与室内设计专业顺利毕业。在多年的实践中，我积累了丰富的项目经验，涵盖了企业展厅、品牌/政府展台、商业美陈、公共空间、活动执行多个领域。我坚信设计不仅仅是创造美观的空间，更是为人们的生活和工作提供解决方案。</p>
-                            </div>
-                        </section>
+                        </div>
                     </div>
-
-                    <section class="detail-section">
-                        <h2 class="section-title">服务特色</h2>
-                        <div class="section-content">
-                            <ul class="achievement-list">
-                                <li><strong>个性化定制</strong>：深入了解每位客户的独特需求，提供量身定制的设计方案。</li>
-                                <li><strong>全程跟踪</strong>：从初步沟通到项目竣工，全程参与并监督每个环节。</li>
-                                <li><strong>材质把控</strong>：严格筛选环保、优质的建材，确保空间的安全与舒适。</li>
-                                <li><strong>成本控制</strong>：合理规划预算，在保证质量的前提下实现最优性价比。</li>
-                                <li><strong>细节追求</strong>：关注每一个设计细节，追求极致的空间品质。</li>
-                                <li><strong>售后服务</strong>：项目完成后提供持续的维护建议和咨询服务。</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section class="detail-section">
-                        <h2 class="section-title">项目经验</h2>
-                        <div class="section-content">
-                            <p>在15年的设计生涯中，我成功完成了众多不同类型的项目：</p>
-                            <ul class="responsibility-list">
-                                <li><strong>住宅设计</strong>：现代简约、新中式、轻奢等多种风格的住宅空间设计。</li>
-                                <li><strong>商业空间</strong>：零售店、餐厅、展厅等商业空间设计与品牌形象塑造。</li>
-                                <li><strong>办公环境</strong>：创新型企业办公室、联合办公空间、会议室设计。</li>
-                                <li><strong>酒店设计</strong>：高端酒店、精品民宿的室内设计与空间规划。</li>
-                                <li><strong>公共空间</strong>：展厅、接待区、公共休息区等空间设计。</li>
-                            </ul>
-                            <p>每个项目都是独特的创作过程，我享受与客户共同探索和实现设计梦想的旅程。</p>
-                        </div>
-                    </section>
-
-                    <!-- 联系方式 -->
-                    <section class="detail-section">
-                        <h2 class="section-title">联系方式</h2>
-                        <div class="section-content">
-                            <p>如果您有设计需求或想了解更多信息，欢迎随时联系：</p>
-                            <ul class="contact-list">
-                                <li><i class="fas fa-envelope"></i> 邮箱：876253104@qq.com</li>
-                                <li><i class="fab fa-qq"></i> QQ：876253104</li>
-                                <li><i class="fab fa-weixin"></i> 微信：zbk876253104</li>
-                            </ul>
-                            <p>我期待与您合作，共同创造理想的空间。</p>
-                        </div>
-                    </section>
                 </div>
 
-                <!-- 右侧：留空 -->
-                <div class="project-gallery">
-                    <!-- 这里可以留空 -->
+                <!-- 2018.12-2020.01 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-period">2018.12 - 2020.01</div>
+                        <h3 class="timeline-title">美术指导 / 资深空间设计师</h3>
+                        <p class="timeline-company">福建海峡旅游文化传媒有限公司</p>
+                        <div class="timeline-body">
+                            <p>全面负责翔业集团空间设计业务，主导厦门机场T3/T4航站楼百万级节庆美陈、集团春节晚会舞美设计及"村跑"赛事活动规划，实现从概念创意到现场落地的全流程管控。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2017.03-2018.12 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-period">2017.03 - 2018.12</div>
+                        <h3 class="timeline-title">设计经理</h3>
+                        <p class="timeline-company">厦门维度所广告有限公司</p>
+                        <div class="timeline-body">
+                            <p>统筹空间美陈景观、商业地产品牌规划、展览展示等全案设计，2017年带领团队拿下地区80%设计业务份额，公司营业额提升40%。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2016.05-2017.01 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-period">2016.05 - 2017.01</div>
+                        <h3 class="timeline-title">执行策划 / 陈列支持</h3>
+                        <p class="timeline-company">特步投资有限公司</p>
+                        <div class="timeline-body">
+                            <p>负责模特3D模型建模与橱窗效果图标准，参与特步季度波段道具开发及订货会策划方案，跟进形象店橱窗落地执行。</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 教育背景 & 资格证书 -->
+        <section class="resume-section" id="education">
+            <h2 class="section-title">教育背景 & 资格证书</h2>
+            <div class="edu-cert-grid">
+                <div class="edu-block">
+                    <h3><i class="fas fa-graduation-cap"></i> 教育背景</h3>
+                    <div class="edu-item">
+                        <div class="edu-year">2008 - 2012</div>
+                        <div class="edu-info">
+                            <strong>中南林业科技大学</strong>
+                            <span>本科 · 家具与室内设计</span>
+                        </div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-year">2008 - 2011</div>
+                        <div class="edu-info">
+                            <strong>湖南大众传媒学院</strong>
+                            <span>大专 · 环境艺术设计</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="campus-block">
+                    <h3><i class="fas fa-university"></i> 在校经历</h3>
+                    <ul class="campus-list">
+                        <li>协助专业课教师编辑调整教学书籍并发行</li>
+                        <li>绘画作品被学校馆藏</li>
+                    </ul>
+                </div>
+                <div class="cert-block">
+                    <h3><i class="fas fa-certificate"></i> 资格证书</h3>
+                    <ul class="cert-list">
+                        <li>室内设计装饰（高级）证书/地方人社局颁发（投标加分项）</li>
+                        <li>展览设计师（高级）证书/（投标加分项）</li>
+                        <li>高等学校英语应用能力 A级</li>
+                        <li>NIT 全国计算机应用水平证书</li>
+                        <li>驾驶证 C1</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
+
     </main>
 
-    <!-- 向上箭头按钮 -->
+    <!-- 向上箭头 -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
     </div>
