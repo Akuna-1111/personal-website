@@ -8,6 +8,7 @@
     <!-- 从Google Fonts加载思源字体（思源宋体、思源黑体） -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
     <!-- 背景闪烁星星 -->
@@ -51,7 +52,7 @@
 
             <!-- 网页端导航菜单 -->
             <div class="nav-menu">
-                <a href="#projects">亮点项目</a>
+                <a href="#projects">近期案例</a>
                 <a href="#contact">合作联系</a>
                 <a href="about.html">关于我</a>
             </div>
@@ -70,7 +71,7 @@
             <!-- 移动端下拉菜单 -->
             <div class="mobile-dropdown" id="mobileDropdown">
                 <a href="#contact">合作联系</a>
-                <a href="#projects">亮点项目</a>
+                <a href="#projects">近期案例</a>
                 <a href="about.html">关于我</a>
                 <div class="mobile-location">
                     <i class="fas fa-map-marker-alt"></i>
@@ -107,66 +108,47 @@
             </div>
         </section>
 
-        <!-- 项目案例模块 -->
+        <!-- 近期案例 - 双行轮播 -->
         <section id="projects" class="section">
             <div class="content">
-                <h2 class="section-title">亮点项目</h2>
-                <div class="projects-grid">
-                    <div class="project-item">
-                        <div class="project-image">
-                            <img src="https://picsum.photos/id/101/900/300" alt="四川场道翔安机场项目部展厅">
+                <h2 class="section-title">近期案例</h2>
+                <div class="projects-swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="project-airport.html" class="project-card-link">
+                                <div class="project-card-img">
+                                    <img src="image/zt/zt-01.jpg" alt="四川场道翔安机场项目部展厅">
+                                </div>
+                                <div class="project-card-label">四川场道翔安机场项目部展厅</div>
+                            </a>
                         </div>
-                        <div class="project-content">
-                            <a href="about.html#key-projects" class="project-name">四川场道翔安机场项目部展厅</a>
-                            <p class="project-description">为华西集团四川场道公司打造110㎡品牌展厅，创新采用"雾化地埋灯"模拟机场跑道，融合航空元素与企业精神，成为机场项目展厅IP级标杆。</p>
+                        <div class="swiper-slide">
+                            <a href="project-liming.html" class="project-card-link">
+                                <div class="project-card-img">
+                                    <img src="image/kczdzx/kczdzx-02.jpg" alt="黎明科技创新指导中心">
+                                </div>
+                                <div class="project-card-label">黎明科技创新指导中心</div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-image">
-                            <img src="https://picsum.photos/id/102/900/300" alt="黎明科技创新指导中心">
+                        <div class="swiper-slide">
+                            <a href="project-xunzhan.html" class="project-card-link">
+                                <div class="project-card-img">
+                                    <img src="image/zl/xgt/xgt-01.png" alt="闽货华夏行巡展">
+                                </div>
+                                <div class="project-card-label">闽货华夏行系列巡展</div>
+                            </a>
                         </div>
-                        <div class="project-content">
-                            <a href="about.html#key-projects" class="project-name">黎明科技创新指导中心</a>
-                            <p class="project-description">以"嘉庚精神与科技教育融合"为主题，规划120㎡多功能创新实践空间，集成科技教学区、3D打印区与虚拟实验室，打造兼具教育性与艺术性的文化空间。</p>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-image">
-                            <img src="https://picsum.photos/id/103/900/300" alt="闽货华夏行巡展">
-                        </div>
-                        <div class="project-content">
-                            <a href="about.html#key-projects" class="project-name">闽货华夏行系列巡展</a>
-                            <p class="project-description">连续四年中标福建省商务厅巡展项目，覆盖澳门MIF、北京服贸会、青洽会、兰洽会等全国重要展会，独立完成策划、设计到落地的全流程。</p>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-image">
-                            <img src="https://picsum.photos/id/104/900/300" alt="厦门海沧新时代文明实践站">
-                        </div>
-                        <div class="project-content">
-                            <a href="about.html#key-projects" class="project-name">海沧新时代文明实践站</a>
-                            <p class="project-description">厦门首个文明实践站改造项目，融合柯井古厝建筑风格与新中式美学，涵盖140㎡展厅及户外文化墙、标识导视牌、景观小品整体设计。</p>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-image">
-                            <img src="https://picsum.photos/id/105/900/300" alt="厦门建发汽车党建文化设计">
-                        </div>
-                        <div class="project-content">
-                            <a href="about.html#key-projects" class="project-name">建发汽车品牌党建文化设计</a>
-                            <p class="project-description">为厦门建发汽车打造"红色引擎"党建品牌活动室，涵盖红旗4S店、二手车交易市场三大空间，创新融合品牌文化与党建元素。</p>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-image">
-                            <img src="https://picsum.photos/id/106/900/300" alt="厦门机场节庆美陈">
-                        </div>
-                        <div class="project-content">
-                            <a href="about.html#experience" class="project-name">厦门机场T3/T4节庆美陈设计</a>
-                            <p class="project-description">主导厦门机场百万级节庆美陈设计，精准把控设计方向，全程跟进现场施工安装，营造具有品牌辨识度的交通枢纽空间美学体验。</p>
+                        <div class="swiper-slide">
+                            <a href="project-haicang.html" class="project-card-link">
+                                <div class="project-card-img">
+                                    <img src="image/yz/xgt/yz-01.jpg" alt="厦门海沧新时代文明实践站">
+                                </div>
+                                <div class="project-card-label">海沧新时代文明实践站</div>
+                            </a>
                         </div>
                     </div>
                 </div>
+                <a href="https://www.zcool.com.cn/u/16878121" target="_blank" class="more-link">查看更多 <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
@@ -174,13 +156,16 @@
         <section id="contact" class="section">
             <div class="content">
                 <h2 class="section-title">合作联系</h2>
-                <div class="contact-info">
-                    <p>如果您有项目需要合作，欢迎通过以下方式联系</p>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-envelope"></i> 邮箱：876253104@qq.com</li>
-                        <li><i class="fab fa-qq"></i> QQ：876253104</li>
-                        <li><i class="fab fa-weixin"></i> 微信：zbk876253104</li>
-                    </ul>
+                <div class="contact-card">
+                    <div class="contact-qr">
+                        <img src="image/qr-wechat.png" alt="微信扫码">
+                        <span>扫码咨询</span>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-row"><i class="fas fa-envelope"></i><span>876253104@qq.com</span></div>
+                        <div class="contact-row"><i class="fab fa-qq"></i><span>876253104</span></div>
+                        <div class="contact-row"><i class="fab fa-weixin"></i><span>zbk876253104</span></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -188,10 +173,12 @@
     </main>
 
     <!-- 向上箭头按钮 -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
+    <div class="fixed-btns">
+        <a href="index.html" class="btn-home" title="回到主页"><i class="fas fa-home"></i></a>
+        <div class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

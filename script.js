@@ -103,10 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const personalLogo = document.querySelector('.personal-logo');
     if (personalLogo) {
         personalLogo.addEventListener('click', function() {
-            // 如果是移动端，关闭下拉菜单
-            const mobileDropdown = document.getElementById('mobileDropdown');
             if (mobileDropdown && mobileDropdown.classList.contains('active')) {
-                mobileDropdown.classList.remove('active');
+                closeMenu();
             }
 
             // 检查当前页面是否是主页（index.html）
@@ -152,37 +150,35 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(title);
     });
 
-    // 向上箭头按钮 - 滚动超过300px时显示
+    // 右下角按钮组 - 滚动超过300px时显示
     const backToTopBtn = document.getElementById('backToTop');
-    if (backToTopBtn) {
+    const homeBtn = document.querySelector('.btn-home');
+    if (backToTopBtn || homeBtn) {
         function checkScroll() {
             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            const showThreshold = 300; // 滚动300px后显示
+            const showThreshold = 300;
 
             if (scrollPosition > showThreshold) {
-                backToTopBtn.classList.add('show');
+                if (backToTopBtn) backToTopBtn.classList.add('show');
+                if (homeBtn) homeBtn.classList.add('show');
             } else {
-                backToTopBtn.classList.remove('show');
+                if (backToTopBtn) backToTopBtn.classList.remove('show');
+                if (homeBtn) homeBtn.classList.remove('show');
             }
         }
 
-        // 初始检查和滚动监听
         checkScroll();
         window.addEventListener('scroll', checkScroll);
 
-        // 点击按钮回到顶部
-        backToTopBtn.addEventListener('click', function() {
-            // 如果是移动端，关闭下拉菜单
-            const mobileDropdown = document.getElementById('mobileDropdown');
-            if (mobileDropdown && mobileDropdown.classList.contains('active')) {
-                mobileDropdown.classList.remove('active');
-            }
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', function() {
+                const mobileDropdown = document.getElementById('mobileDropdown');
+                if (mobileDropdown && mobileDropdown.classList.contains('active')) {
+                    mobileDropdown.classList.remove('active');
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        });
+        }
     }
 
     // 滚动时隐藏/显示顶部导航栏（超过800px时隐藏）
@@ -225,9 +221,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.timeline-item, .showcase-item, .advantage-card, .edu-item, .cert-list li').forEach(el => {
+    document.querySelectorAll('.timeline-item, .advantage-card, .edu-item, .cert-list li').forEach(el => {
         el.classList.add('reveal');
         revealObserver.observe(el);
     });
+
+    // ---- 亮点项目 Swiper 双行轮播 ----
+    const projectsSwiper = document.querySelector('.projects-swiper');
+    if (projectsSwiper && typeof Swiper !== 'undefined') {
+        new Swiper(projectsSwiper, {
+            slidesPerView: 3,
+            spaceBetween: 24,
+            loop: true,
+            freeMode: true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            speed: 2000,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 12,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
+        });
+    }
 
 });
