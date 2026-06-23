@@ -33,11 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileDropdown = document.getElementById('mobileDropdown');
 
+    var openMenu, closeMenu;
+
     if (mobileMenuBtn && mobileDropdown) {
         const menuIcon = mobileMenuBtn.querySelector('i');
 
         // 打开菜单函数
-        function openMenu() {
+        openMenu = function() {
             mobileMenuBtn.classList.add('active');
             mobileDropdown.classList.add('active');
 
@@ -46,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
             }, 150);
-        }
+        };
 
         // 关闭菜单函数
-        function closeMenu() {
+        closeMenu = function() {
             mobileMenuBtn.classList.remove('active');
 
             // 等待旋转复位动画进行到一半时切换图标
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuIcon.classList.add('fa-bars');
                 mobileDropdown.classList.remove('active');
             }, 150);
-        }
+        };
 
         mobileMenuBtn.addEventListener('click', function(e) {
             e.stopPropagation(); // 防止事件冒泡
@@ -233,7 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
             slidesPerView: 3,
             spaceBetween: 24,
             loop: true,
-            freeMode: true,
             autoplay: {
                 delay: 0,
                 disableOnInteraction: false,
@@ -256,5 +257,19 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         });
     }
+
+    // 图片懒加载渐入动画：监听所有图片加载完成
+    document.addEventListener('load', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.target.classList.add('loaded');
+        }
+    }, true);
+
+    // 对已缓存的图片（可能比DOMContentLoaded更早加载完成）直接显示
+    document.querySelectorAll('img').forEach(function(img) {
+        if (img.complete) {
+            img.classList.add('loaded');
+        }
+    });
 
 });

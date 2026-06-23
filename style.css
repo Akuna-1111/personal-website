@@ -236,6 +236,15 @@ main {
     min-height: calc(100vh - 160px);
 }
 
+img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
 .section {
     margin-bottom: 100px;
     padding: 30px;
@@ -249,15 +258,30 @@ main {
 
 .section-title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     color: #fff;
     position: relative;
-    display: block;
-    text-align: center;
+    display: table;
     padding-bottom: 8px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    cursor: default;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 0.5px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+    width: 100%;
 }
 
 .section-title.animated {
@@ -276,38 +300,38 @@ main {
 /* ---- 合作联系 ---- */
 .contact-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 50px;
-    max-width: 500px;
+    gap: 24px;
+    max-width: 560px;
     margin: 0 auto;
     padding: 40px;
 }
 
 .contact-qr {
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .contact-qr img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 8px;
     display: block;
 }
 
 .contact-qr span {
     color: #666;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-family: 'Noto Sans SC', sans-serif;
 }
 
 .contact-detail {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    gap: 100px;
 }
 
 .contact-row {
@@ -429,7 +453,8 @@ main {
 
 /* 项目案例和合作联系模块透明背景 */
 #projects.section,
-#contact.section {
+#contact.section,
+#about-me.section {
     background-color: transparent;
     padding: 0;
     border-radius: 0;
@@ -546,6 +571,52 @@ main {
     opacity: 1;
 }
 
+.about-brief {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0 0;
+}
+
+.brief-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.brief-label {
+    color: #666;
+    font-size: 0.75rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.06em;
+}
+
+.brief-value {
+    color: #ccc;
+    font-size: 0.92rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 500;
+    position: relative;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.brief-value::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 0.5px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.brief-value:hover::after {
+    width: 100%;
+}
+
 .more-link {
     display: inline-flex;
     align-items: center;
@@ -613,6 +684,16 @@ main {
         margin-top: 40px;
     }
 
+    .about-brief {
+        flex-wrap: wrap;
+        gap: 20px 24px;
+    }
+
+    .brief-item {
+        flex: 1 1 28%;
+        min-width: 80px;
+    }
+
     .more-link {
         float: none;
         display: flex;
@@ -639,7 +720,8 @@ main {
     }
 
     #projects.section,
-    #contact.section {
+    #contact.section,
+    #about-me.section {
         background-color: transparent;
         padding: 0;
         border-radius: 0;
@@ -755,10 +837,9 @@ main {
     }
 
     /* 合作联系移动端调整 */
-    .contact-card {
+    .contact-detail {
         flex-direction: column;
-        gap: 28px;
-        padding: 30px 24px;
+        gap: 14px;
     }
 
 
@@ -1066,17 +1147,9 @@ main {
     transition: all 0.3s ease;
 }
 
+.gtn-layout {
     padding: 100px 0 0;
     max-width: 100%;
-}
-
-.gtn-hero {
-    width: 100%;
-}
-
-.gtn-hero img {
-    width: 100%;
-    display: block;
 }
 
 .gtn-header {
