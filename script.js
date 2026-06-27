@@ -221,12 +221,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.target.classList.add('revealed');
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-    document.querySelectorAll('.timeline-item, .advantage-card, .edu-item, .cert-list li').forEach(el => {
-        el.classList.add('reveal');
+    document.querySelectorAll('.timeline-item, .advantage-card, .edu-item, .cert-list li').forEach((el, i) => {
+        el.classList.add('reveal', 'reveal-up');
+        if (i % 3 === 1) el.classList.add('reveal-left');
+        if (i % 3 === 2) el.classList.add('reveal-right');
         revealObserver.observe(el);
     });
+
+    // ---- 技能进度条动画 ----
+    const skillBarsEl = document.querySelector('.skills-bars');
+    if (skillBarsEl) {
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-bar-fill').forEach(fill => {
+                        fill.style.width = fill.dataset.width + '%';
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        skillObserver.observe(skillBarsEl);
+    }
 
     // ---- 亮点项目 Swiper 双行轮播 ----
     const projectsSwiper = document.querySelector('.projects-swiper');
@@ -240,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
-            speed: 2000,
+            speed: 3500,
             breakpoints: {
                 320: {
                     slidesPerView: 1,
