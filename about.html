@@ -2,54 +2,40 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我 - 郑彬坤</title>
-    <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="郑彬坤，15年展览展厅/空间设计经验，专案定制服务模式。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl_theme.css">
+    <link rel="stylesheet" href="css/kayden.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
-    <!-- 背景闪烁星星 -->
-    <div class="stars-container">
-        <div class="star star-1"></div>
-        <div class="star star-2"></div>
-        <div class="star star-3"></div>
-        <div class="star star-4"></div>
-        <div class="star star-5"></div>
-        <div class="star star-6"></div>
-        <div class="star star-7"></div>
-        <div class="star star-8"></div>
-        <div class="star star-9"></div>
-        <div class="star star-10"></div>
-        <div class="star star-11"></div>
-        <div class="star star-12"></div>
-        <div class="star star-13"></div>
-        <div class="star star-14"></div>
-        <div class="star star-15"></div>
-        <div class="star star-16"></div>
-        <div class="star star-17"></div>
-        <div class="star star-18"></div>
-        <div class="star star-19"></div>
-        <div class="star star-20"></div>
-        <div class="star star-21"></div>
-        <div class="star star-22"></div>
-        <div class="star star-23"></div>
-        <div class="star star-24"></div>
+<body data-offset="102">
+    <!--PRELOADER-->
+    <div id="preloader">
+        <div class="text-center w-100">
+            <div class="loader"></div>
+        </div>
     </div>
 
-    <!-- 顶部导航栏 -->
+    <!--Header-->
+    <!-- Top Navigation Bar -->
     <nav class="top-navbar">
         <div class="nav-container">
             <div class="personal-logo">
-                <div class="logo-circle">
-                    <span class="logo-letter">Z</span>
-                </div>
+                <div class="logo-circle"><span class="logo-letter">Z</span></div>
                 <span class="logo-name">ZHENG BIN KUN</span>
             </div>
             <div class="nav-menu">
-                <a href="index.html#projects">近期案例</a>
+                <a href="projects.html">项目案例</a>
                 <a href="index.html#contact">合作联系</a>
                 <a href="about.html">关于我</a>
             </div>
@@ -61,7 +47,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="mobile-dropdown" id="mobileDropdown">
-                <a href="index.html#projects">近期案例</a>
+                <a href="projects.html">项目案例</a>
                 <a href="index.html#contact">合作联系</a>
                 <a href="about.html">关于我</a>
                 <div class="mobile-location">
@@ -72,230 +58,391 @@
         </div>
     </nav>
 
-    <main class="resume-page">
-        <!-- Hero 头部 -->
-        <section class="resume-hero">
-            <div class="resume-hero-bg"></div>
-            <div class="resume-hero-content">
-                <h1 class="resume-name">郑彬坤</h1>
-                <p class="resume-tagline">统筹 · 设计 · 执行 — 一站式空间营造者</p>
-                <div class="resume-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">15<span class="stat-unit">年</span></span>
-                        <span class="stat-label">从业经验</span>
+    
+
+    <!-- ===== RESUME HERO ===== -->
+    <section id="home" class="vh-100 d-flex align-items-center" style="padding-top:120px;">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="800">
+                <h1 class="fw-bold mb-3" style="font-family:'Noto Serif SC',serif;font-size:calc(2rem + 3vw);">ZHENG BINKUN</h1>
+                <p class="text-secondary fs-5 mb-3">郑彬坤 — 设计总监 / 合伙人</p>
+                <p class="text-secondary mb-5" style="font-size:0.85rem;letter-spacing:0.12em;">EXHIBITION & SPACE DESIGN · 15 YEARS EXPERIENCE</p>
+                <div class="d-flex justify-content-center gap-5">
+                    <div class="text-center">
+                        <span class="fs-2 fw-bold d-block"><span class="tmcounter" data-from="1" data-to="15" data-speed="1000">1</span><span class="fs-6">年</span></span>
+                        <span class="text-secondary">从业经验</span>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number">设计总监<span class="stat-unit">/经理</span></span>
-                        <span class="stat-label">合作方向</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number"><i class="fas fa-map-marker-alt"></i> 厦门</span>
-                        <span class="stat-label">定居城市</span>
+                    <div class="border-start border-secondary"></div>
+                    <div class="text-center">
+                        <span class="fs-2 fw-bold d-block">专案定制</span>
+                        <span class="text-secondary">服务模式</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 个人优势 -->
-        <section class="resume-section" id="advantages">
-            <h2 class="section-title">个人优势</h2>
-            <div class="advantages-grid">
-                <div class="advantage-card">
-                    <div class="advantage-icon"><i class="fas fa-sitemap"></i></div>
-                    <h3>资源整合</h3>
-                    <p>厦门、漳州、上海、西安、昆明、成都、兰州、西安等地区的展览活动搭建、设备租赁、广告制作资源整合能力</p>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon"><i class="fas fa-tools"></i></div>
-                    <h3>工艺材料</h3>
-                    <p>熟悉展览、活动、工装施工工艺和材料</p>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI技术前沿</h3>
-                    <p>熟练使用ComfyUI多风格生图及图片编辑，Claude Code开发Web端应用/静态网站/ppt</p>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon"><i class="fas fa-bullseye"></i></div>
-                    <h3>复合经验</h3>
-                    <p>10年+设计经验（景观、商业美陈、活动布置、展览展厅），5年+设计项目及施工管理经验</p>
-                </div>
+    <!-- ===== 个人优势 ===== -->
+    <section id="advantages" style="padding-top:100px;">
+        <div class="container">
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase bilingual"><span class="h-en">Personal Strengths</span><span class="h-zh">个人优势</span></h2>
+            <p class="text-secondary mb-4 text-center" style="font-size:0.8rem;">依托全国多地供应链网络与前沿AI工具链，构建从设计到落地的完整竞争优势</p>
             </div>
-        </section>
+                                                <div class="section-body"><div class="kayden-gradient-grid"><div class="row g-0"><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0"><div class="fs-2 mb-3"><i class="fas fa-bullseye"></i></div><h4 class="mb-1">全案统筹</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Project Management</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">15 年一站式空间营造经验...</p></div></div><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100"><div class="fs-2 mb-3"><i class="fas fa-pencil-ruler"></i></div><h4 class="mb-1">设计输出</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Design Output</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">专注企业展厅...</p></div></div><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200"><div class="fs-2 mb-3"><i class="fas fa-eye"></i></div><h4 class="mb-1">视觉美学</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Visual Aesthetics</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">对色彩、材质...</p></div></div><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300"><div class="fs-2 mb-3"><i class="fas fa-microchip"></i></div><h4 class="mb-1">AI 技术前沿</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">AI Frontier</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">熟练使用 ComfyUI...</p></div></div></div><div class="row g-0"><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0"><div class="fs-2 mb-3"><i class="fas fa-sitemap"></i></div><h4 class="mb-1">资源整合</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Resource Integration</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">厦门、漳州...</p></div></div><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100"><div class="fs-2 mb-3"><i class="fas fa-cubes"></i></div><h4 class="mb-1">工艺材料</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Materials & Craft</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">熟悉展览...</p></div></div><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200"><div class="fs-2 mb-3"><i class="fas fa-tools"></i></div><h4 class="mb-1">复合经验</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Diverse Experience</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">10年+设计经验...</p></div></div><div class="col-lg-3 text-center"><div class="p-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300"><div class="fs-2 mb-3"><i class="fas fa-handshake"></i></div><h4 class="mb-1">商务沟通</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Business Communication</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">精准把握客户需求...</p></div></div></div></div></div></section>
 
-        <!-- 软件技能 -->
-        <section class="resume-section" id="skills">
-            <h2 class="section-title">软件技能</h2>
-            <div class="skills-cloud">
-                <span class="skill-tag highlight">3Ds Max + VR</span>
-                <span class="skill-tag">CAD</span>
-                <span class="skill-tag">Photoshop</span>
-                <span class="skill-tag highlight">Illustrator</span>
-                <span class="skill-tag">SketchUp</span>
-                <span class="skill-tag highlight">PowerPoint</span>
-                <span class="skill-tag">CorelDraw</span>
-                <span class="skill-tag">剪映</span>
-                <span class="skill-tag">ComfyUI</span>
-                <span class="skill-tag">Stable Diffusion WebUI</span>
-                <span class="skill-tag highlight">Claude Code</span>
-                <span class="skill-tag highlight">VS code</span>
-                <span class="skill-tag">Qwen Image</span>
-                <span class="skill-tag">DeepSeek V4 pro</span>
-            </div>
-            <div class="skills-bars">
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>3Ds Max + VR</span><span class="skill-bar-percent">95%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>CAD</span><span class="skill-bar-percent">85%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>Photoshop</span><span class="skill-bar-percent">90%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>Illustrator</span><span class="skill-bar-percent">88%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>SketchUp</span><span class="skill-bar-percent">80%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>ComfyUI / AI 工具链</span><span class="skill-bar-percent">75%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>Claude Code</span><span class="skill-bar-percent">70%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-                </div>
-                <div class="skill-bar-item">
-                    <div class="skill-bar-header"><span>PowerPoint</span><span class="skill-bar-percent">92%</span></div>
-                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
-                </div>
-            </div>
-        </section>
+        
 
-        <!-- 工作经历 - 时间线 -->
-        <section class="resume-section" id="experience">
-            <h2 class="section-title">工作经历</h2>
-            <div class="timeline">
-                <!-- 2021.03-至今 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-period">2021.03 - 至今</div>
-                        <h3 class="timeline-title">设计总监 / 合伙人</h3>
-                        <p class="timeline-company">厦门天其展览服务有限公司</p>
-                        <div class="timeline-body">
-                            <p>负责项目执行统筹与设计管理，兼具资源整合与落地执行能力。主导活动及展会项目全流程：招投标、合同拟定、预算编制、供应商管理、现场搭建。担任项目设计负责人，精准把握客户需求转化为创意方案，指导团队完成3D效果图、主视觉KV、施工图等全套设计输出。</p>
-                            <p>建立多渠道比价机制降低采购成本，前瞻性引入并本地部署AI Agent设计工具（ComfyUI、Stable Diffusion WebUI、Claude Code等），研发室内设计、IP设计、风格转换等工作流，将部分繁琐工作耗时缩短50%以上。</p>
-                            <div class="timeline-highlights">
-                                <span class="highlight-label">核心业绩</span>
-                                <ul>
-                                    <li>主导厦门首个文明实践站（海沧社区）整体改造设计，成为区域示范点</li>
-                                    <li>连续四年（2022-2025）中标福建省商务厅"闽货华夏行"系列巡展项目</li>
-                                    <li>与华西集团合作打造厦门翔安新机场首个项目展厅，成为IP级打卡点</li>
-                                    <li>承接中储粮、建发集团国企文化空间升级项目</li>
-                                    <li>为片仔癀股东大会提供陈列设计技术支持</li>
-                                </ul>
+        
+
+        
+
+        
+
+    <!-- ===== 软件技能 ===== -->
+    <section id="skills" style="padding-top:100px;">
+        <div class="container">
+            <div class="heading text-center mb-4">
+                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase bilingual"><span class="h-en">Software Skills</span><span class="h-zh">软件技能</span></h2>
+            <p class="text-secondary mb-4 text-center" style="font-size:0.8rem;">覆盖三维建模、平面设计、视频剪辑、AI生成四大领域，持续迭代数字化设计工作流</p>
+            </div>
+            <div class="section-body">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="0">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-3dsmax.svg" alt="3Ds Max">
+                                    <span>3Ds Max</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">90%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-cad.svg" alt="AutoCAD">
+                                    <span>AutoCAD</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">60%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-photoshop.svg" alt="Photoshop">
+                                    <span>Photoshop</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">60%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="150">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-illustrator.svg" alt="Illustrator">
+                                    <span>Illustrator</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">60%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-sketchup.svg" alt="SketchUp">
+                                    <span>SketchUp</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">60%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="250">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-office.svg" alt="Microsoft Office">
+                                    <span>Microsoft Office</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">92%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="0">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-coreldraw.svg" alt="CorelDraw">
+                                    <span>CorelDraw</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">75%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-jianying.svg" alt="剪映">
+                                    <span>剪映</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">60%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-comfyui.svg" alt="ComfyUI">
+                                    <span>ComfyUI</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">60%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="150">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-claudecode.svg" alt="Claude Code">
+                                    <span>Claude Code</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">70%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <i class="devicon-vscode-plain colored" style="font-size:96px;"></i>
+                                    <span>Visual Studio Code</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">60%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 text-center" data-aos="fade-up" data-aos-duration="400" data-aos-delay="250">
+                        <div class="skill-flip-card">
+                            <div class="skill-flip-inner">
+                                <div class="skill-flip-front">
+                                    <img src="image/icon-deepseek.svg" alt="DeepSeek">
+                                    <span>DeepSeek</span>
+                                </div>
+                                <div class="skill-flip-back">
+                                    <span class="skill-pct">65%</span>
+                                    <span class="skill-pct-label">项目使用率</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 2018.12-2020.01 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-period">2018.12 - 2020.01</div>
-                        <h3 class="timeline-title">美术指导 / 资深空间设计师</h3>
-                        <p class="timeline-company">福建海峡旅游文化传媒有限公司</p>
-                        <div class="timeline-body">
-                            <p>全面负责翔业集团空间设计业务，主导厦门机场T3/T4航站楼百万级节庆美陈、集团春节晚会舞美设计及"村跑"赛事活动规划，实现从概念创意到现场落地的全流程管控。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2017.03-2018.12 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-period">2017.03 - 2018.12</div>
-                        <h3 class="timeline-title">设计经理</h3>
-                        <p class="timeline-company">厦门维度所广告有限公司</p>
-                        <div class="timeline-body">
-                            <p>统筹空间美陈景观、商业地产品牌规划、展览展示等全案设计，2017年带领团队拿下地区80%设计业务份额，公司营业额提升40%。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2016.05-2017.01 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-period">2016.05 - 2017.01</div>
-                        <h3 class="timeline-title">执行策划 / 陈列支持</h3>
-                        <p class="timeline-company">特步投资有限公司</p>
-                        <div class="timeline-body">
-                            <p>负责模特3D模型建模与橱窗效果图标准，参与特步季度波段道具开发及订货会策划方案，跟进形象店橱窗落地执行。</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            </div></div>
         </section>
 
-        <!-- 教育背景 & 资格证书 -->
-        <section class="resume-section" id="education">
-            <h2 class="section-title">教育背景 & 资格证书</h2>
-            <div class="edu-cert-grid">
-                <div class="edu-block">
-                    <h3><i class="fas fa-graduation-cap"></i> 教育背景</h3>
-                    <div class="edu-item">
-                        <div class="edu-year">2008 - 2012</div>
-                        <div class="edu-info">
-                            <strong>中南林业科技大学</strong>
-                            <span>本科 · 家具与室内设计</span>
+        <!-- ===== 工作经历 ===== -->
+    <section id="experience" style="padding-top:100px;">
+        <div class="container">
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase bilingual"><span class="h-en">Work Experience</span><span class="h-zh">工作经历</span></h2>
+            <p class="text-secondary mb-4 text-center" style="font-size:0.8rem;">历经品牌方、广告公司、展览公司多重角色转换，积累全产业链视角与项目管控经验</p>
+            </div>
+            <div class="section-body">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- Timeline Item 1 -->
+                        <div class="d-flex mb-5" data-aos="fade-up" data-aos-duration="600">
+                            <div class="me-4 text-end" style="min-width:120px;">
+                                <span class="badge outline-badge mb-2">2021.03 - 至今</span>
+                            </div>
+                            <div class="position-relative ps-4" style="border-left:2px solid #00cc00;">
+                                <div class="position-absolute rounded-circle" style="width:12px;height:12px;background:#00cc00;left:-7px;top:6px;box-shadow:0 0 12px rgba(0,204,0,0.4);"></div>
+                                <h4 class="fw-bold mb-1">设计总监 / 合伙人</h4>
+                                <p class="text-secondary mb-2">厦门天其展览服务有限公司</p>
+                                <p class="text-secondary">负责项目执行统筹与设计管理，兼具资源整合与落地执行能力。主导活动及展会项目全流程：招投标、合同拟定、预算编制、供应商管理、现场搭建。担任项目设计负责人，精准把握客户需求转化为创意方案，指导团队完成3D效果图、主视觉KV、施工图等全套设计输出。</p>
+                                <p class="text-secondary">建立多渠道比价机制降低采购成本，前瞻性引入AI Agent设计工具，研发室内设计、IP设计、风格转换等工作流，将部分繁琐工作耗时缩短50%以上。</p>
+                                <div class="p-3 mt-2 rounded-3" style="background:rgba(0,204,0,0.05);border:1px solid rgba(0,204,0,0.15);">
+                                    <strong class="fs-6">核心业绩</strong>
+                                    <ul class="mb-0 mt-2 small text-secondary">
+                                        <li>主导厦门首个文明实践站（海沧社区）整体改造设计，成为区域示范点</li>
+                                        <li>连续四年（2022-2025）中标福建省商务厅"闽货华夏行"系列巡展项目</li>
+                                        <li>与华西集团合作打造厦门翔安新机场首个项目展厅，成为IP级打卡点</li>
+                                        <li>承接中储粮、建发集团国企文化空间升级项目</li>
+                                        <li>为片仔癀股东大会提供陈列设计技术支持</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="d-flex mb-5" data-aos="fade-up" data-aos-duration="600">
+                            <div class="me-4 text-end" style="min-width:120px;">
+                                <span class="badge border border-secondary text-secondary mb-2">2018.12 - 2020.01</span>
+                            </div>
+                            <div class="position-relative ps-4" style="border-left:2px solid rgba(255,255,255,0.1);">
+                                <div class="position-absolute rounded-circle" style="width:10px;height:10px;background:rgba(255,255,255,0.2);left:-6px;top:6px;"></div>
+                                <h4 class="fw-bold mb-1">美术指导 / 资深空间设计师</h4>
+                                <p class="text-secondary mb-2">福建海峡旅游文化传媒有限公司</p>
+                                <p class="text-secondary">全面负责翔业集团空间设计业务，主导厦门机场T3/T4航站楼百万级节庆美陈、集团春节晚会舞美设计及"村跑"赛事活动规划，实现从概念创意到现场落地的全流程管控。</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="d-flex mb-5" data-aos="fade-up" data-aos-duration="600">
+                            <div class="me-4 text-end" style="min-width:120px;">
+                                <span class="badge border border-secondary text-secondary mb-2">2017.03 - 2018.12</span>
+                            </div>
+                            <div class="position-relative ps-4" style="border-left:2px solid rgba(255,255,255,0.1);">
+                                <div class="position-absolute rounded-circle" style="width:10px;height:10px;background:rgba(255,255,255,0.2);left:-6px;top:6px;"></div>
+                                <h4 class="fw-bold mb-1">设计经理</h4>
+                                <p class="text-secondary mb-2">厦门维度所广告有限公司</p>
+                                <p class="text-secondary">统筹空间美陈景观、商业地产品牌规划、展览展示等全案设计，2017年带领团队拿下地区80%设计业务份额，公司营业额提升40%。</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="d-flex" data-aos="fade-up" data-aos-duration="600">
+                            <div class="me-4 text-end" style="min-width:120px;">
+                                <span class="badge border border-secondary text-secondary mb-2">2016.05 - 2017.01</span>
+                            </div>
+                            <div class="position-relative ps-4" style="border-left:2px solid rgba(255,255,255,0.1);">
+                                <div class="position-absolute rounded-circle" style="width:10px;height:10px;background:rgba(255,255,255,0.2);left:-6px;top:6px;"></div>
+                                <h4 class="fw-bold mb-1">执行策划 / 陈列支持</h4>
+                                <p class="text-secondary mb-2">特步投资有限公司</p>
+                                <p class="text-secondary">负责模特3D模型建模与橱窗效果图标准，参与特步季度波段道具开发及订货会策划方案，跟进形象店橱窗落地执行。</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="edu-item">
-                        <div class="edu-year">2008 - 2011</div>
-                        <div class="edu-info">
-                            <strong>湖南大众传媒学院</strong>
-                            <span>大专 · 环境艺术设计</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="campus-block">
-                    <h3><i class="fas fa-university"></i> 在校经历</h3>
-                    <ul class="campus-list">
-                        <li>协助专业课教师编辑调整教学书籍并发行</li>
-                        <li>绘画作品被学校馆藏</li>
-                    </ul>
-                </div>
-                <div class="cert-block">
-                    <h3><i class="fas fa-certificate"></i> 资格证书</h3>
-                    <ul class="cert-list">
-                        <li>室内设计装饰（高级）证书/地方人社局颁发（投标加分项）</li>
-                        <li>展览设计师（高级）证书/（投标加分项）</li>
-                        <li>高等学校英语应用能力 A级</li>
-                        <li>NIT 全国计算机应用水平证书</li>
-                        <li>驾驶证 C1</li>
-                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- ===== 教育背景 ===== -->
+    <section id="education" style="padding-top:100px; padding-bottom:60px;">
+        <div class="container">
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase bilingual"><span class="h-en">Education Background</span><span class="h-zh">教育背景</span></h2>
+            <p class="text-secondary mb-4 text-center" style="font-size:0.8rem;">家具与室内设计本科 + 环境艺术设计专业背景，持有室内设计装饰（高级）及展览设计师（高级）双证</p>
+            </div>
+            <div class="section-body">
+                <div class="row gy-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="600">
+                        <h4 class="mb-4"><i class="fas fa-graduation-cap me-2" style="color:#00cc00;"></i>教育背景</h4>
+                        <div class="p-3 rounded-3 mb-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+                            <span class="badge outline-badge mb-2">2008 - 2012</span>
+                            <h5 class="mb-1">中南林业科技大学</h5>
+                            <p class="text-secondary mb-0 small">本科 · 家具与室内设计</p>
+                        </div>
+                        <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+                            <span class="badge outline-badge mb-2">2008 - 2011</span>
+                            <h5 class="mb-1">湖南大众传媒学院</h5>
+                            <p class="text-secondary mb-0 small">大专 · 环境艺术设计</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                        <h4 class="mb-4"><i class="fas fa-university me-2" style="color:#00cc00;"></i>在校经历</h4>
+                        <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+                            <ul class="mb-0 small text-secondary">
+                                <li class="mb-2">协助专业课教师编辑调整教学书籍并发行</li>
+                                <li>绘画作品被学校馆藏</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                        <h4 class="mb-4"><i class="fas fa-certificate me-2" style="color:#00cc00;"></i>资格证书</h4>
+                        <div class="p-3 rounded-3" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+                            <ul class="mb-0 small text-secondary">
+                                <li class="mb-2">室内设计装饰（高级）证书 / 地方人社局颁发（投标加分项）</li>
+                                <li class="mb-2">展览设计师（高级）证书（投标加分项）</li>
+                                <li class="mb-2">高等学校英语应用能力 A级</li>
+                                <li class="mb-2">NIT 全国计算机应用水平证书</li>
+                                <li>驾驶证 C1</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- 向上箭头 -->
-    <div class="fixed-btns"><a href="index.html" class="btn-home" title="回到主页"><i class="fas fa-home"></i></a><div class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></div></div>
+    <!--Footer-->
+    <footer class="kayden-footer py-4">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                <ul class="social-links list-inline mb-4">
+                    <li class="list-inline-item"><a href="https://www.zcool.com.cn/u/16878121" target="_blank" title="站酷"><i class="fas fa-draw-polygon"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-phone" title="电话"><i class="fas fa-phone"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-email" title="邮箱"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-phone" title="电话"><i class="fas fa-phone"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-email" title="邮箱"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-wechat" title="微信"><i class="fab fa-weixin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-qq" title="QQ"><i class="fab fa-qq"></i></a></li>
+                </ul>
+                <p class="text-center m-0 text-secondary">郑彬坤 © 2025. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
 
-    <script src="script.js"></script>
+    <!--To TOP-->
+    <a href="#" class="toTop d-inline" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <!--JavaScript-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.appear.min.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/kayden.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/contact-popup.js"></script>
 </body>
 </html>

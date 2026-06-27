@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目案例 - 郑彬坤</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl_theme.css">
+    <link rel="stylesheet" href="css/kayden.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .filter-bar { text-align: center; margin-bottom: 3rem; }
+        .filter-btn {
+            display: inline-block; padding: 8px 22px; margin: 4px;
+            border: 1px solid rgba(255,255,255,0.15); border-radius: 50px;
+            color: #9aa4b8; font-size: 0.85rem; cursor: pointer;
+            background: transparent; transition: all 0.25s ease;
+            font-family: inherit;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: #00cc00; color: #00cc00; background: rgba(0,204,0,0.08);
+        }
+        .filter-btn.reset-btn {
+            border-color: rgba(255,255,255,0.08); color: #5a6680; font-size: 0.78rem; margin-top: 16px;
+        }
+        .filter-btn.reset-btn:hover { border-color: #5a6680; color: #e8ecf1; background: transparent; }
+        .grid-item { transition: opacity 0.35s ease, transform 0.35s ease; }
+        .grid-item.hidden { display: none; }
+    </style>
+</head>
+<body data-offset="102">
+    <div id="preloader"><div class="text-center w-100"><div class="loader"></div></div></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-container">
+            <div class="personal-logo">
+                <div class="logo-circle"><span class="logo-letter">Z</span></div>
+                <span class="logo-name">ZHENG BIN KUN</span>
+            </div>
+            <div class="nav-menu">
+                <a href="projects.html">项目案例</a>
+                <a href="index.html#contact">合作联系</a>
+                <a href="about.html">关于我</a>
+            </div>
+            <div class="location-marker"><i class="fas fa-map-marker-alt"></i><span>中国·厦门</span></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <div class="mobile-dropdown" id="mobileDropdown">
+                <a href="projects.html">项目案例</a>
+                <a href="index.html#contact">合作联系</a>
+                <a href="about.html">关于我</a>
+                <div class="mobile-location"><i class="fas fa-map-marker-alt"></i><span>中国·厦门</span></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section style="padding-top:140px;padding-bottom:40px;">
+        <div class="container">
+            <div class="heading text-center">
+                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase bilingual"><span class="h-en">Project Cases</span><span class="h-zh">项目案例</span></h2>
+                <p class="text-secondary mb-4" style="font-size:0.85rem;">项目案例 — 13个精选案例</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section>
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">全部 All</button>
+                <button class="filter-btn" data-filter="展厅">展厅 Showroom</button>
+                <button class="filter-btn" data-filter="展览">展览 Exhibition</button>
+                <button class="filter-btn" data-filter="文化">文化 Culture</button>
+                <button class="filter-btn" data-filter="活动">活动 Event</button>
+                <button class="filter-btn" data-filter="空间">空间 Space</button>
+                <br>
+                <button class="filter-btn reset-btn" data-filter="all">重置筛选 Reset</button>
+            </div>
+
+            <!-- All 13 cards -->
+            <div class="row gy-4" id="projectsGrid">
+                <div class="col-lg-6 col-md-6 grid-item" data-category="展厅">
+                    <a href="project-airport.html" class="project-card large">
+                        <div class="project-card-img"><img src="image/zt/zt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Corporate Showroom · 110m²</span><h3 class="project-card-title">四川场道翔安机场项目部展厅</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW PROJECT <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 grid-item" data-category="展厅 空间">
+                    <a href="project-liming.html" class="project-card large">
+                        <div class="project-card-img"><img src="image/kczdzx/kczdzx-02.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Education Exhibition · 120m²</span><h3 class="project-card-title">黎明科技创新指导中心</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW PROJECT <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="展览">
+                    <a href="project-xunzhan.html" class="project-card large">
+                        <div class="project-card-img"><img src="image/zl/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">National Tour · 2022-2025</span><h3 class="project-card-title">闽货华夏行系列巡展</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW PROJECT <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 grid-item" data-category="文化 展厅">
+                    <a href="project-haicang.html" class="project-card large">
+                        <div class="project-card-img"><img src="image/yz/xgt/yz-08.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Cultural Exhibition · 140m²</span><h3 class="project-card-title">海沧新时代文明实践站</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW PROJECT <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="展览">
+                    <a href="project-qinghaihui.html" class="project-card large">
+                        <div class="project-card-img"><img src="image/qhh/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Exhibition Booth · 2025</span><h3 class="project-card-title">2025青洽会福建馆</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW PROJECT <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 grid-item" data-category="文化">
+                    <a href="project-wenhuaqiang.html" class="project-card large">
+                        <div class="project-card-img"><img src="image/whq/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Culture Wall · 2022</span><h3 class="project-card-title">2022年企业文化墙设计</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW PROJECT <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 grid-item" data-category="文化 展厅">
+                    <a href="project-jingzhen.html" class="project-card large">
+                        <div class="project-card-img"><img src="image/jz/xgt/xgt-13.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Police Culture · 2021</span><h3 class="project-card-title">2021年厦门经侦支队警营文化设计</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW PROJECT <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="活动">
+                    <a href="project-cunpao.html" class="project-card small">
+                        <div class="project-card-img"><img src="image/cp/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Event Medal · 2019</span><h3 class="project-card-title">2019年海旅村跑赛事奖牌</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="空间">
+                    <a href="project-chuchuang.html" class="project-card small">
+                        <div class="project-card-img"><img src="image/cc/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Window Display · 2018</span><h3 class="project-card-title">2018年空铺橱窗</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="活动 空间">
+                    <a href="project-qiangguo.html" class="project-card small">
+                        <div class="project-card-img"><img src="image/qgs/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Pop-up Store · 2019</span><h3 class="project-card-title">2019年强国盛柿快闪店</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="空间">
+                    <a href="project-duogongneng.html" class="project-card small">
+                        <div class="project-card-img"><img src="image/dgn/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Interior · 2020</span><h3 class="project-card-title">2020年学校多功能厅装修</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="活动">
+                    <a href="project-baixiang.html" class="project-card small">
+                        <div class="project-card-img"><img src="image/bx/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Event · 2019</span><h3 class="project-card-title">2019年佰翔酒店10周年展</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 grid-item" data-category="空间">
+                    <a href="project-jimei.html" class="project-card small">
+                        <div class="project-card-img"><img src="image/jm/xgt/xgt-01.webp" loading="lazy" alt=""><div class="project-card-overlay"></div></div>
+                        <div class="project-card-content"><span class="project-card-cat">Renovation · 2020</span><h3 class="project-card-title">2020年集美中学书吧走廊</h3></div>
+                        <div class="project-card-caption"><span class="project-card-btn">VIEW <i class="fas fa-arrow-right ms-2"></i></span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="kayden-footer py-4 mt-5">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                <ul class="social-links list-inline mb-4">
+                    <li class="list-inline-item"><a href="#" class="contact-icon-phone" title="电话"><i class="fas fa-phone"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-email" title="邮箱"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-wechat" title="微信"><i class="fab fa-weixin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-qq" title="QQ"><i class="fab fa-qq"></i></a></li>
+                </ul>
+                <p class="text-center m-0 text-secondary">郑彬坤 © 2025. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="toTop d-inline" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.appear.min.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/kayden.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/contact-popup.js"></script>
+    <script>
+    // Project filter
+    document.addEventListener('DOMContentLoaded', function() {
+        var filterBtns = document.querySelectorAll('.filter-btn');
+        var items = document.querySelectorAll('.grid-item');
+
+        filterBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var filter = this.getAttribute('data-filter');
+
+                // Update active state
+                filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                this.classList.add('active');
+
+                // Filter items
+                items.forEach(function(item) {
+                    if (filter === 'all' || item.getAttribute('data-category').indexOf(filter) !== -1) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>
