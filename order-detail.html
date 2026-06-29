@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单详情 - 郑彬坤</title>
+    <meta name="description" content="订单详情 - 查看已提交的设计服务订单内容与支付信息。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/all.min.css">
+                <link rel="stylesheet" href="css/kayden.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .order-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 36px 32px;
+            margin-bottom: 24px;
+        }
+        .order-no {
+            font-size: 0.75rem;
+            color: #5a6680;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .order-no span {
+            color: #00cc00;
+            font-weight: 600;
+        }
+        .order-plan-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e8ecf1;
+            margin-bottom: 4px;
+        }
+        .order-plan-en {
+            font-size: 0.78rem;
+            color: #5a6680;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .order-detail-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+        .order-detail-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #00cc00;
+            padding: 2px 10px;
+            border: 1px solid rgba(0,204,0,0.2);
+            border-radius: 50px;
+            white-space: nowrap;
+            height: fit-content;
+        }
+        .order-detail-text {
+            font-size: 0.85rem;
+            color: #5a6680;
+            line-height: 1.7;
+        }
+        .order-summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+            background: rgba(0,204,0,0.04);
+            border: 1px solid rgba(0,204,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .order-summary-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.85rem;
+            color: #5a6680;
+        }
+        .order-summary-table tr:last-child td {
+            border-bottom: none;
+        }
+        .order-summary-table td:first-child {
+            width: 30%;
+            color: #5a6680;
+            font-size: 0.78rem;
+        }
+        .order-summary-table td:last-child {
+            color: #e8ecf1;
+            font-weight: 600;
+        }
+        .order-summary-table td.green {
+            color: #00cc00;
+        }
+        .order-actions {
+            display: flex;
+            gap: 14px;
+            margin-top: 28px;
+        }
+        .order-btn {
+            flex: 1;
+            padding: 14px 0;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-family: inherit;
+            border: none;
+            transition: all 0.25s ease;
+        }
+        .order-btn-primary {
+            background: #00cc00;
+            color: #000;
+        }
+        .order-btn-primary:hover {
+            background: #00dd00;
+            transform: scale(1.02);
+        }
+        .order-btn-outline {
+            background: transparent;
+            color: #00cc00;
+            border: 1px solid rgba(0,204,0,0.3);
+        }
+        .order-btn-outline:hover {
+            background: rgba(0,204,0,0.08);
+        }
+        .order-empty {
+            text-align: center;
+            padding: 80px 0;
+            color: #5a6680;
+        }
+        @media (max-width: 768px) {
+            .order-card { padding: 24px 18px; }
+            .order-summary-table td { padding: 12px 14px; font-size: 0.8rem; }
+            .order-actions { flex-direction: column; }
+        }
+    </style>
+</head>
+<body data-offset="102">
+    <div id="preloader"><div class="text-center w-100"><div class="loader"></div></div></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-container">
+            <div class="personal-logo">
+                <div class="logo-circle"><span class="logo-letter">Z</span></div>
+                <span class="logo-name">ZHENG BIN KUN</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">首页</a>
+                <a href="projects.html">项目案例</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">专案定制</a>
+                <a href="index.html#contact">合作联系</a>
+            </div>
+            <div class="location-marker">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>中国·厦门</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <div class="mobile-dropdown" id="mobileDropdown">
+                <a href="index.html">首页</a>
+                <a href="projects.html">项目案例</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">专案定制</a>
+                <a href="index.html#contact">合作联系</a>
+                <div class="mobile-location"><i class="fas fa-map-marker-alt"></i><span>中国·厦门</span></div>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top:120px; padding-bottom:60px;">
+        <div class="container" style="max-width:900px;">
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase ">订单详情</h2>
+            </div>
+
+            <div id="orderContent">
+                <!-- filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="kayden-footer py-4">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                <ul class="social-links list-inline mb-4">
+                    <li class="list-inline-item"><a href="#" class="contact-icon-phone" title="电话"><i class="fas fa-phone"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-email" title="邮箱"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-wechat" title="微信"><i class="fab fa-weixin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-qq" title="QQ"><i class="fab fa-qq"></i></a></li>
+                </ul>
+                <p class="text-center m-0 text-secondary">郑彬坤 © 2025. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="toTop d-inline" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.appear.min.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+                <script src="js/typed.min.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/kayden.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/contact-popup.js"></script>
+    <script src="js/order-detail.js"></script>
+</body>
+</html>

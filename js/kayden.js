@@ -13,11 +13,6 @@
 $('body').on("kaydenLoaded", function(){
     
 
-    /*Masonry*/
-    $('.grid').masonry({
-        itemSelector: '.grid-item'
-    });
-
     //AOS
     AOS.init({
         offset: 180,
@@ -47,63 +42,6 @@ $('body').on("kaydenLoaded", function(){
     //Header
     $(window).on('scroll', function () {
         transparent_header()
-    });
-
-    // Popup Portfolio Section
-    $(".portfolio-image").magnificPopup({
-        type:"image",
-        closeOnContentClick: true,
-        gallery:{
-            enabled: true,
-            navigateByImgClick:true,
-            preload:[0,1]
-        }
-    });
-
-    $(".iframe_popup").magnificPopup({
-        type: "iframe",
-        closeBtnInside: false,
-        iframe: {
-            markup: '<div class="mfp-iframe-scaler">'+
-                      '<div class="mfp-close"></div>'+
-                      '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-                    '</div>',
-            patterns: {
-                youtube: {
-                    index: 'youtube.com/',
-          
-                    id: 'v=',
-          
-                    src: 'https://www.youtube.com/embed/%id%?autoplay=1'
-                },
-                vimeo: {
-                    index: 'vimeo.com/',
-                    id: '/',
-                    src: '//player.vimeo.com/video/%id%?autoplay=1'
-                },
-                gmaps: {
-                     index: '//maps.google.',
-                    src: '%id%&output=embed'
-                }
-                },
-          
-            srcAction: 'iframe_src',
-        }
-        
-    });
-
-    // OWL Carousel
-    $('#client_slider').owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        dots: true,
-        autoplayHoverPause: true,
-        autoplaySpeed: 1000,
-        navSpeed: 500,
-        dotsSpeed: 500,
-        dragEndSpeed: 500
     });
 
     //Typed JS

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单确认 - 郑彬坤</title>
+    <meta name="description" content="订单确认 - 选择方案并确认支付方式，定制您的专属设计服务。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/all.min.css">
+                <link rel="stylesheet" href="css/kayden.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body data-offset="102">
+    <div id="preloader"><div class="text-center w-100"><div class="loader"></div></div></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="nav-container">
+            <div class="personal-logo">
+                <div class="logo-circle"><span class="logo-letter">Z</span></div>
+                <span class="logo-name">ZHENG BIN KUN</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">首页</a>
+                <a href="projects.html">项目案例</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">专案定制</a>
+                <a href="index.html#contact">合作联系</a>
+            </div>
+            <div class="location-marker">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>中国·厦门</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="mobile-dropdown" id="mobileDropdown">
+                <a href="index.html">首页</a>
+                <a href="projects.html">项目案例</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">专案定制</a>
+                <a href="index.html#contact">合作联系</a>
+                <div class="mobile-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>中国·厦门</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section style="padding-top:120px; padding-bottom:60px;">
+        <div class="container">
+            <div class="heading text-center mb-5">
+                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase ">订单确认</h2>
+                <p class="text-secondary mb-4" style="font-size:0.85rem;">确认方案内容并选择适合的支付方式</p>
+            </div>
+
+            <div class="row gy-4" id="paymentContent">
+                <!-- Left: Selected Plan Details -->
+                <div class="col-lg-7">
+                    <div class="pay-plan-card" id="payPlanCard">
+                        <div class="pay-plan-header">
+                            <h3 id="payPlanTitle">全案设计</h3>
+                            <p class="text-secondary mb-0" id="payPlanEn">Full-Service Design</p>
+                        </div>
+                        <div class="pay-plan-body" id="payPlanBody">
+                            <!-- filled by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Payment Options -->
+                <div class="col-lg-5">
+                    <div class="pay-option-card">
+                        <h4 class="pay-option-title"><i class="fas fa-credit-card me-2" style="color:#00cc00;"></i>支付方式</h4>
+
+                        <!-- Payment method selector -->
+                        <div class="pay-methods" id="payMethods">
+                            <label class="pay-method active" data-method="monthly">
+                                <input type="radio" name="payMethod" value="monthly" checked>
+                                <div class="pay-method-content">
+                                    <span class="pay-method-name">月付</span>
+                                    <span class="pay-method-desc">按月支付</span>
+                                </div>
+                                <span class="pay-method-amount" id="amount-monthly">¥8,000</span>
+                            </label>
+                            <label class="pay-method" data-method="quarterly">
+                                <input type="radio" name="payMethod" value="quarterly">
+                                <div class="pay-method-content">
+                                    <span class="pay-method-name">季付</span>
+                                    <span class="pay-method-desc">每季度支付 · 节省 ¥2,000</span>
+                                </div>
+                                <span class="pay-method-amount" id="amount-quarterly">¥22,000</span>
+                            </label>
+                            <label class="pay-method" data-method="semiannual">
+                                <input type="radio" name="payMethod" value="semiannual">
+                                <div class="pay-method-content">
+                                    <span class="pay-method-name">半年付</span>
+                                    <span class="pay-method-desc">每半年支付 · 节省 ¥8,000</span>
+                                </div>
+                                <span class="pay-method-amount" id="amount-semiannual">¥40,000</span>
+                            </label>
+                            <label class="pay-method" data-method="project">
+                                <input type="radio" name="payMethod" value="project">
+                                <div class="pay-method-content">
+                                    <span class="pay-method-name">项目制</span>
+                                    <span class="pay-method-desc">按项目一次性支付</span>
+                                </div>
+                                <span class="pay-method-amount" id="amount-project">定制</span>
+                            </label>
+                        </div>
+
+                        <!-- Project calculator (shown only for 项目制) -->
+                        <div class="pay-calc" id="payCalc" style="display:none;">
+                            <div class="pay-calc-row">
+                                <div class="pay-calc-field">
+                                    <label>合同金额 (¥)</label>
+                                    <input type="number" id="calcAmount" placeholder="输入合同金额" min="0">
+                                </div>
+                                <div class="pay-calc-field">
+                                    <label>项目点数 (%)</label>
+                                    <input type="number" id="calcRate" placeholder="输入点数" min="0" max="100" step="0.1">
+                                </div>
+                            </div>
+                            <button class="pay-calc-btn" id="calcLockBtn"><i class="fas fa-lock me-2"></i>锁定计算</button>
+                            <div class="pay-calc-result" id="calcResult" style="display:none;">
+                                <span class="pay-calc-label">计算结果</span>
+                                <span class="pay-calc-value" id="calcValue">¥0</span>
+                                <span class="pay-calc-formula" id="calcFormula"></span>
+                            </div>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="pay-summary">
+                            <h4 class="pay-option-title"><i class="fas fa-receipt me-2" style="color:#00cc00;"></i>订单摘要</h4>
+                            <div class="pay-summary-row">
+                                <span>方案名称</span>
+                                <span id="summaryPlan">全案设计</span>
+                            </div>
+                            <div class="pay-summary-row">
+                                <span>支付方式</span>
+                                <span id="summaryMethod">月付</span>
+                            </div>
+                            <div class="pay-summary-row pay-summary-total">
+                                <span>应付金额</span>
+                                <span id="summaryAmount">¥8,000</span>
+                            </div>
+                        </div>
+
+                        <div class="pay-bottom-row">
+                            <a href="services.html" class="pay-back-btn"><i class="fas fa-arrow-left me-2"></i>返回</a>
+                            <button class="pay-submit-btn" id="paySubmitBtn">
+                                提交订单 <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                        <p class="text-center mt-3" style="font-size:0.72rem;color:#5a6680;">提交后将在3小时内与您联系确认细节</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="kayden-footer py-4">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                <ul class="social-links list-inline mb-4">
+                    <li class="list-inline-item"><a href="#" class="contact-icon-phone" title="电话"><i class="fas fa-phone"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-email" title="邮箱"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-wechat" title="微信"><i class="fab fa-weixin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-qq" title="QQ"><i class="fab fa-qq"></i></a></li>
+                </ul>
+                <p class="text-center m-0 text-secondary">郑彬坤 © 2025. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="toTop d-inline" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.appear.min.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+                <script src="js/typed.min.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/kayden.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/contact-popup.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>
