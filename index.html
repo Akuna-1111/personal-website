@@ -130,7 +130,40 @@
                 <p class="text-secondary mb-4" style="font-size:0.85rem;">全案统筹、设计输出、视觉美学、AI 技术前沿 — 四大核心能力</p>
             </div>
             <div class="section-body">
-                <div class="kayden-gradient-grid"><div class="row g-0"><div class="col-lg-3 text-center"><div class="p-5"><div class="fs-2 mb-3"><i class="fas fa-bullseye"></i></div><h4 class="mb-1">全案统筹</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Project Management</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">一站式空间营造经验，从前期策划、概念设计到施工监理、竣工验收，全流程把控项目品质与进度。</p></div></div><div class="col-lg-3 text-center"><div class="p-5"><div class="fs-2 mb-3"><i class="fas fa-pencil-ruler"></i></div><h4 class="mb-1">设计输出</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Design Output</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">专注企业展厅、品牌展台、文化展馆等空间类型，擅长将品牌叙事融入空间动线，打造沉浸式体验场景。</p></div></div><div class="col-lg-3 text-center"><div class="p-5"><div class="fs-2 mb-3"><i class="fas fa-eye"></i></div><h4 class="mb-1">视觉美学</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">Visual Aesthetics</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">对色彩、材质、光影、比例有敏锐感知，擅长打造兼具功能性与艺术美感的展览空间体验</p></div></div><div class="col-lg-3 text-center"><div class="p-5"><div class="fs-2 mb-3"><i class="fas fa-microchip"></i></div><h4 class="mb-1">AI 技术前沿</h4><p class="text-secondary mb-2" style="font-size:0.78rem;letter-spacing:0.06em;">AI Frontier</p><p class="text-secondary" style="font-size:0.82rem;line-height:1.7;">擅长使用 AI Agent 定制项目配套应用，ComfyUI 生图、编辑、放大等，将部分繁琐工作耗时缩短 50% 以上。</p></div></div></div></div>
+                <div class="row capability-row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="capability-card">
+                            <div class="capability-icon"><i class="fas fa-bullseye"></i></div>
+                            <h4 class="mb-1">全案统筹</h4>
+                            <p class="capability-en">Project Management</p>
+                            <p class="capability-desc">一站式空间营造经验，从前期策划、概念设计到施工监理、竣工验收，全流程把控项目品质与进度。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="capability-card">
+                            <div class="capability-icon"><i class="fas fa-pencil-ruler"></i></div>
+                            <h4 class="mb-1">设计输出</h4>
+                            <p class="capability-en">Design Output</p>
+                            <p class="capability-desc">专注企业展厅、品牌展台、文化展馆等空间类型，擅长将品牌叙事融入空间动线，打造沉浸式体验场景。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="capability-card">
+                            <div class="capability-icon"><i class="fas fa-eye"></i></div>
+                            <h4 class="mb-1">视觉美学</h4>
+                            <p class="capability-en">Visual Aesthetics</p>
+                            <p class="capability-desc">对色彩、材质、光影、比例有敏锐感知，擅长打造兼具功能性与艺术美感的展览空间体验。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="capability-card">
+                            <div class="capability-icon"><i class="fas fa-microchip"></i></div>
+                            <h4 class="mb-1">AI 技术前沿</h4>
+                            <p class="capability-en">AI Frontier</p>
+                            <p class="capability-desc">擅长使用 AI Agent 定制项目配套应用，ComfyUI 生图、编辑、放大等，将部分繁琐工作耗时缩短 50% 以上。</p>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -311,16 +344,28 @@
                         <input type="hidden" name="subject" value="网站咨询 - 郑彬坤个人主页">
                         <div class="row gy-3">
                             <div class="col-md-6">
-                                <input type="text" name="name" class="contact-input" placeholder="您的姓名" required>
+                                <label for="fieldName" class="contact-label">您的姓名 <span class="required-star">*</span></label>
+                                <input type="text" id="fieldName" name="name" class="contact-input" placeholder="请填写您的姓名" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="company" class="contact-input" placeholder="公司名称">
+                                <label for="fieldEmail" class="contact-label">电子邮箱 <span class="required-star">*</span></label>
+                                <input type="email" id="fieldEmail" name="email" class="contact-input" placeholder="用于回复您的咨询" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fieldPhone" class="contact-label">手机号码 <span class="optional-tag">选填</span></label>
+                                <input type="tel" id="fieldPhone" name="phone" class="contact-input" placeholder="方便快速沟通">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fieldCompany" class="contact-label">公司名称 <span class="optional-tag">选填</span></label>
+                                <input type="text" id="fieldCompany" name="company" class="contact-input" placeholder="所属企业或机构">
                             </div>
                             <div class="col-12">
-                                <input type="text" name="projectType" class="contact-input" placeholder="项目类型（如：企业展厅/展台/文化墙）">
+                                <label for="fieldProjectType" class="contact-label">项目类型 <span class="optional-tag">选填</span></label>
+                                <input type="text" id="fieldProjectType" name="projectType" class="contact-input" placeholder="如：企业展厅 / 展台 / 文化墙">
                             </div>
                             <div class="col-12">
-                                <textarea class="contact-input" name="needs" rows="4" placeholder="简述您的需求（面积、预算范围、时间节点等）" required></textarea>
+                                <label for="fieldNeeds" class="contact-label">需求描述 <span class="required-star">*</span></label>
+                                <textarea id="fieldNeeds" class="contact-input" name="needs" rows="4" placeholder="简述您的需求（面积、预算范围、时间节点等）" required></textarea>
                             </div>
                             <div class="col-12 text-center">
                                 <button type="submit" class="contact-submit-btn">发送需求 <i class="fas fa-paper-plane ms-2"></i></button>
@@ -342,13 +387,13 @@
                     <li class="list-inline-item"><a href="#" class="contact-icon-wechat" title="微信"><i class="fab fa-weixin"></i></a></li>
                     <li class="list-inline-item"><a href="#" class="contact-icon-qq" title="QQ"><i class="fab fa-qq"></i></a></li>
                 </ul>
-                <p class="text-center m-0 text-secondary">郑彬坤 © 2025. 保留所有权利.</p>
+                <p class="text-center m-0 text-secondary">郑彬坤 © 2026. 保留所有权利.</p>
             </div>
         </div>
     </footer>
 
     <!--To TOP-->
-    <a href="#" class="toTop d-inline" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
+    <a href="#" class="toTop d-inline" id="return-to-top" aria-label="返回顶部"><i class="fas fa-chevron-up"></i></a>
 
     <!--JavaScript-->
     <script src="js/bootstrap.min.js"></script>
@@ -360,7 +405,6 @@
     <script src="js/jquery.countTo.js"></script>
     <script src="js/typed.min.js"></script>
     <script src="js/alert.js"></script>
-    <script src="js/contact.js"></script>
     <script src="js/kayden.js"></script>
     <script src="js/custom-nav.js"></script>
     <script src="js/contact-popup.js"></script>

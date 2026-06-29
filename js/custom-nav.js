@@ -82,17 +82,22 @@ document.addEventListener('DOMContentLoaded', function() {
         personalLogo.style.cursor = 'pointer';
     }
 
-    // Navbar hide on scroll
+    // Navbar: show-on-scroll-up, hide-on-scroll-down
     var topNavbar = document.querySelector('.top-navbar');
     if (topNavbar) {
+        var lastScrollY = window.scrollY || document.documentElement.scrollTop;
         var ticking = false;
+        var HIDE_THRESHOLD = 300;
         function handleNavbarVisibility() {
-            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            if (scrollPosition > 800) {
+            var scrollY = window.scrollY || document.documentElement.scrollTop;
+            if (scrollY <= 0) {
+                topNavbar.classList.remove('hidden');
+            } else if (scrollY > HIDE_THRESHOLD && scrollY > lastScrollY) {
                 topNavbar.classList.add('hidden');
-            } else {
+            } else if (scrollY < lastScrollY) {
                 topNavbar.classList.remove('hidden');
             }
+            lastScrollY = scrollY;
         }
         function onScroll() {
             if (!ticking) {
@@ -104,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         handleNavbarVisibility();
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
     }
 
     // Back to top button

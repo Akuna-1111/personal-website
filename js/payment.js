@@ -193,9 +193,9 @@
         var overlay = document.querySelector('.contact-popup-overlay');
         content.innerHTML =
             '<p style="color:#00cc00;font-size:1.3rem;font-weight:700;margin-bottom:6px;">合作愉快！</p>' +
-            '<p style="color:#5a6680;font-size:0.72rem;margin-bottom:14px;">订单编号 ' + orderNo + '</p>' +
+            '<p style="color:#6e7a94;font-size:0.72rem;margin-bottom:14px;">订单编号 ' + orderNo + '</p>' +
             '<p style="color:#e8ecf1;font-size:0.9rem;margin-bottom:20px;">感谢选择' + plan.title + '方案<br>期待与您携手共创佳作</p>' +
-            '<p style="color:#5a6680;font-size:0.72rem;margin-top:14px;margin-bottom:0;">即将跳转订单详情...</p>';
+            '<p style="color:#6e7a94;font-size:0.72rem;margin-top:14px;margin-bottom:0;">即将跳转订单详情...</p>';
         overlay.classList.add('active');
         fireConfetti();
 

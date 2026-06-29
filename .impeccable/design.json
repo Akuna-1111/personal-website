@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-30T08:00:00.000Z",
+  "title": "Design System: 郑彬坤个人作品集",
+  "extensions": {
+    "colorMeta": {
+      "beacon-green": {
+        "role": "primary",
+        "displayName": "Beacon Green",
+        "canonical": "oklch(70% 0.27 142)",
+        "tonalRamp": [
+          "oklch(15% 0.27 142)",
+          "oklch(25% 0.27 142)",
+          "oklch(35% 0.27 142)",
+          "oklch(45% 0.27 142)",
+          "oklch(55% 0.27 142)",
+          "oklch(65% 0.27 142)",
+          "oklch(75% 0.27 142)",
+          "oklch(85% 0.27 142)"
+        ]
+      },
+      "green-hover": {
+        "role": "primary",
+        "displayName": "Green Hover",
+        "canonical": "oklch(73% 0.28 142)",
+        "tonalRamp": []
+      },
+      "green-deep": {
+        "role": "primary",
+        "displayName": "Green Deep",
+        "canonical": "oklch(55% 0.25 142)",
+        "tonalRamp": []
+      },
+      "void-black": {
+        "role": "neutral",
+        "displayName": "Void Black",
+        "canonical": "oklch(0% 0)",
+        "tonalRamp": [
+          "oklch(0% 0)",
+          "oklch(12% 0)",
+          "oklch(24% 0)",
+          "oklch(36% 0)",
+          "oklch(48% 0)",
+          "oklch(60% 0)",
+          "oklch(72% 0)",
+          "oklch(84% 0)"
+        ]
+      },
+      "surface-sheet": {
+        "role": "neutral",
+        "displayName": "Surface Sheet",
+        "canonical": "oklch(12% 0)",
+        "tonalRamp": []
+      },
+      "mist-white": {
+        "role": "neutral",
+        "displayName": "Mist White",
+        "canonical": "oklch(93% 0)",
+        "tonalRamp": []
+      },
+      "steel-gray": {
+        "role": "neutral",
+        "displayName": "Steel Gray",
+        "canonical": "oklch(72% 0.01 240)",
+        "tonalRamp": []
+      },
+      "shadow-gray": {
+        "role": "neutral",
+        "displayName": "Shadow Gray",
+        "canonical": "oklch(58% 0.02 250)",
+        "tonalRamp": []
+      },
+      "deep-gray": {
+        "role": "neutral",
+        "displayName": "Deep Gray",
+        "canonical": "oklch(55% 0.02 250)",
+        "tonalRamp": []
+      },
+      "error-red": {
+        "role": "primary",
+        "displayName": "Error Red",
+        "canonical": "oklch(62% 0.2 20)",
+        "tonalRamp": []
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero主标题。首页英文名/大字。使用Noto Serif SC（全站唯一例外），不设letter-spacing。" },
+      "headline": { "displayName": "Headline", "purpose": "Section标题。中英双语翻转（仅首页）。居中，无下划线。" },
+      "title": { "displayName": "Title", "purpose": "卡片标题、面板内标题、项目名。" },
+      "body": { "displayName": "Body", "purpose": "正文、项目描述、履历详情。最大行宽65-75ch。" },
+      "label": { "displayName": "Label", "purpose": "英文标签、分类名、按钮内文、导航项。" }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.33, 1, 0.68, 1)",
+        "purpose": "项目卡片hover动画、双语翻转、accordion展开。默认缓动曲线。"
+      },
+      {
+        "name": "ease-fast",
+        "value": "ease",
+        "purpose": "按钮hover、边框transition、颜色过渡。0.25s，比standard快。"
+      },
+      {
+        "name": "duration-fast",
+        "value": "0.25s",
+        "purpose": "按钮、边框、颜色状态变化过渡。"
+      },
+      {
+        "name": "duration-standard",
+        "value": "0.5s",
+        "purpose": "项目卡片overlay/hover展开、双语翻转。"}
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "576px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "992px" },
+      { "name": "xl", "value": "1200px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "主要行动按钮。绿色填充+黑色文字。用于表单提交、服务选择、支付确认。",
+      "html": "<button class=\"ds-btn-primary\">提交咨询</button>",
+      "css": ".ds-btn-primary { padding: 14px 40px; background: #00cc00; color: #000; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; border: none; border-radius: 10px; cursor: pointer; font-family: 'Noto Sans SC', system-ui, sans-serif; transition: background 0.25s ease, transform 0.25s ease; } .ds-btn-primary:hover { background: #00dd00; transform: scale(1.03); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "描边按钮。绿色边框+绿色文字，hover填充为绿色。用于项目卡片VIEW PROJECT入口。",
+      "html": "<span class=\"ds-btn-ghost\">VIEW PROJECT <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></span>",
+      "css": ".ds-btn-ghost { display: inline-block; color: #00cc00; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border: 1px solid rgba(0,204,0,0.4); border-radius: 10px; transition: all 0.3s ease; cursor: pointer; text-decoration: none; } .ds-btn-ghost:hover { background: #00cc00; border-color: #00cc00; color: #000; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "暗色表单输入框。透明灰色背景，focus时边框变绿。用于联系表单和支付计算器。",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"您的姓名 *\" />",
+      "css": ".ds-input { width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; font-size: 0.85rem; color: #e8ecf1; font-family: 'Noto Sans SC', system-ui, sans-serif; outline: none; transition: border-color 0.3s ease, background 0.3s ease; box-sizing: border-box; } .ds-input::placeholder { color: #3a4450; font-size: 0.82rem; } .ds-input:focus { border-color: #00cc00; background: rgba(0,204,0,0.04); }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Interiox风格项目缩略图卡片。图片满铺+底部渐变蒙版，hover时内容上移露出VIEW PROJECT按钮。",
+      "html": "<a class=\"ds-proj-card\" href=\"#\"><div class=\"ds-proj-img\"><img src=\"\" alt=\"\"><div class=\"ds-proj-overlay\"></div></div><div class=\"ds-proj-content\"><span class=\"ds-proj-cat\">Corporate Showroom · 110m²</span><h3 class=\"ds-proj-title\">项目名称</h3></div><div class=\"ds-proj-caption\"><span class=\"ds-btn-ghost\">VIEW PROJECT</span></div></a>",
+      "css": ".ds-proj-card { display: block; position: relative; overflow: hidden; border-radius: 0; text-decoration: none; color: #fff; height: 320px; } .ds-proj-card .ds-proj-img { width: 100%; height: 100%; overflow: hidden; } .ds-proj-card .ds-proj-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; } .ds-proj-card:hover .ds-proj-img img { transform: scale(1.09); } .ds-proj-card .ds-proj-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #000 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.2) 70%, transparent 100%); opacity: 0.6; transition: opacity 0.5s ease; } .ds-proj-card:hover .ds-proj-overlay { opacity: 0.9; } .ds-proj-card .ds-proj-content { position: absolute; bottom: 28px; right: 28px; text-align: right; z-index: 2; transition: bottom 0.5s cubic-bezier(0.33, 1, 0.68, 1); } .ds-proj-card:hover .ds-proj-content { bottom: 80px; } .ds-proj-card .ds-proj-cat { display: block; color: #00cc00; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; } .ds-proj-card .ds-proj-title { font-size: 1.25rem; font-weight: 600; margin: 0; color: #fff; } .ds-proj-card .ds-proj-caption { position: absolute; left: 28px; right: 28px; bottom: 0; z-index: 3; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 18px; text-align: right; opacity: 0; visibility: hidden; transform: translateY(12px); transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1); } .ds-proj-card:hover .ds-proj-caption { opacity: 1; visibility: visible; bottom: 30px; transform: translateY(0); }"
+    },
+    {
+      "name": "Card Container",
+      "kind": "card",
+      "refersTo": "card-default",
+      "description": "通用内容卡片。暗色半透明背景+微弱白色边框+hover绿色边框。用于设计哲学卡片、服务卡片、测试推荐卡片。",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-icon\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#00cc00\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/></svg></div><h4>卡片标题</h4><p>卡片描述文字</p></div>",
+      "css": ".ds-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 28px 26px; height: 100%; transition: border-color 0.3s ease; } .ds-card:hover { border-color: rgba(0,204,0,0.2); } .ds-card .ds-card-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(0,204,0,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; } .ds-card h4 { font-size: 1rem; color: #e8ecf1; margin: 0 0 8px 0; font-weight: 600; } .ds-card p { font-size: 0.82rem; color: #5a6680; line-height: 1.8; margin: 0; }"
+    },
+    {
+      "name": "Outline Badge",
+      "kind": "chip",
+      "refersTo": "badge-outline",
+      "description": "描边标签。绿色边框+绿色文字，hover填充绿色。用于项目详情页分类标签和服务标签。",
+      "html": "<span class=\"ds-badge-outline\">警营文化</span>",
+      "css": ".ds-badge-outline { background: transparent; color: #00cc00; border: 1px solid #00cc00; border-radius: 50px; padding: 5px 16px; font-size: 0.82rem; font-weight: 400; font-family: 'Noto Sans SC', system-ui, sans-serif; transition: all 0.3s ease; display: inline-block; } .ds-badge-outline:hover { background: #00cc00; color: #fff; }"
+    },
+    {
+      "name": "AI Tool Tag",
+      "kind": "chip",
+      "refersTo": "tool-tag",
+      "description": "AI工具标签。绿色微填充+绿色描边+pill形状。用于关于我页面的AI工具列表。",
+      "html": "<span class=\"ds-tool-tag\">ComfyUI</span>",
+      "css": ".ds-tool-tag { display: inline-block; padding: 8px 18px; background: rgba(0,204,0,0.06); border: 1px solid rgba(0,204,0,0.15); border-radius: 50px; font-size: 0.78rem; color: #00cc00; letter-spacing: 0.04em; font-family: 'Noto Sans SC', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Testimonial Card",
+      "kind": "card",
+      "refersTo": "testimonial-card",
+      "description": "客户评价卡片。大号绿色引号+正文+作者信息，底部有分隔线。",
+      "html": "<div class=\"ds-testimonial\"><div class=\"ds-testimonial-quote\">“</div><p class=\"ds-testimonial-text\">评价内容文字</p><div class=\"ds-testimonial-author\"><strong>作者名</strong><span>职位/公司</span></div></div>",
+      "css": ".ds-testimonial { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px 28px 28px; height: 100%; position: relative; transition: border-color 0.3s ease; font-family: 'Noto Sans SC', system-ui, sans-serif; } .ds-testimonial:hover { border-color: rgba(0,204,0,0.2); } .ds-testimonial-quote { font-size: 1.6rem; color: rgba(0,204,0,0.15); margin-bottom: 16px; line-height: 1; } .ds-testimonial-text { font-size: 0.85rem; color: #9aa4b8; line-height: 1.8; margin-bottom: 20px; } .ds-testimonial-author { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 14px; } .ds-testimonial-author strong { display: block; font-size: 0.85rem; color: #e8ecf1; margin-bottom: 2px; } .ds-testimonial-author span { font-size: 0.75rem; color: #5a6680; }"
+    },
+    {
+      "name": "Payment Method Selector",
+      "kind": "custom",
+      "refersTo": "pay-method",
+      "description": "支付方式选择卡片。左侧radio+文字，右侧金额，选中态绿色边框+微绿背景。",
+      "html": "<label class=\"ds-pay-method active\"><input type=\"radio\" name=\"plan\" checked><div class=\"ds-pay-method-content\"><span class=\"ds-pay-method-name\">全案定制</span><span class=\"ds-pay-method-desc\">从概念到落地</span></div><span class=\"ds-pay-method-amount\">定制</span></label>",
+      "css": ".ds-pay-method { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px; cursor: pointer; transition: all 0.25s ease; margin: 0; font-family: 'Noto Sans SC', system-ui, sans-serif; } .ds-pay-method:hover { border-color: rgba(0,204,0,0.2); background: rgba(0,204,0,0.03); } .ds-pay-method.active { border-color: #00cc00; background: rgba(0,204,0,0.06); } .ds-pay-method input { display: none; } .ds-pay-method-content { display: flex; flex-direction: column; gap: 2px; } .ds-pay-method-name { font-size: 0.9rem; color: #e8ecf1; font-weight: 600; } .ds-pay-method-desc { font-size: 0.72rem; color: #5a6680; } .ds-pay-method-amount { font-size: 1rem; font-weight: 700; color: #00cc00; white-space: nowrap; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "top-nav",
+      "description": "固定顶栏导航。黑色到透明渐变背景，桌面端居中链接，移动端汉堡菜单。",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav-container\"><a class=\"ds-nav-logo\" href=\"#\"><span class=\"ds-nav-logo-mark\">K</span><span class=\"ds-nav-logo-text\">郑彬坤</span></a><div class=\"ds-nav-links\"><a href=\"#\">首页</a><a href=\"#\" class=\"active\">项目案例</a><a href=\"#\">关于我</a><a href=\"#\">专案定制</a><a href=\"#\">合作联系</a></div></div></nav>",
+      "css": ".ds-nav { position: fixed; top: 0; left: 0; width: 100%; background: linear-gradient(to bottom, #000, transparent); border-bottom: none; z-index: 1040; padding: 12px 0; font-family: 'Noto Sans SC', system-ui, sans-serif; } .ds-nav-container { display: flex; justify-content: space-between; align-items: center; padding: 0 30px; } .ds-nav-logo { display: flex; align-items: center; gap: 15px; text-decoration: none; } .ds-nav-logo-mark { width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle at center, #00cc00, #008800); display: flex; justify-content: center; align-items: center; color: #e8ecf1; font-weight: 700; font-size: 1.2rem; } .ds-nav-logo-text { color: #9aa4b8; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; } .ds-nav-links { display: flex; gap: 30px; } .ds-nav-links a { color: #9aa4b8; text-decoration: none; font-size: 0.9rem; padding-bottom: 5px; position: relative; transition: color 0.3s ease; } .ds-nav-links a::after { content: ''; position: absolute; bottom: -0.1em; left: 0; width: 0; height: 2px; background-color: #fff; transition: width 0.3s ease; } .ds-nav-links a:hover, .ds-nav-links a.active { color: #fff; } .ds-nav-links a:hover::after, .ds-nav-links a.active::after { width: 100%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "策展人空间 (The Curator's Space)",
+    "overview": "设计师以策展人身份呈现作品。暗色空间如同专业画廊——纯黑背景是展墙，信标绿是引导视线的策展线索。每件作品在自己的区域中独立呼吸，不争夺注意力。观众（潜在客户）在这个空间中自由浏览，通过作品本身建立对设计师能力的判断。\n\n这个视觉系统建立在一个核⼼张⼒上：背景是绝对的存在（纯黑 #000），品牌色是克制的信号（信标绿 #00cc00，≤10% 画⾯占⽐）。层次不靠阴影，而靠边框透明度的微妙变化——这与幻灯⽚式排版中常见的投影、渐变、装饰性分割线截然不同。Web 原⽣的滚动叙事替代了翻页式的 PPT 节奏。",
+    "keyCharacteristics": [
+      "暗色为底，作品为光 — #000 背景让图像成为绝对焦点",
+      "信标绿作为唯一品牌锚点 — 出现在标签、按钮、边框、hover态，每次出现都有明确目的",
+      "扁平靠边框 — 无阴影，深度通过 border 透明度（0.06→0.2→0.3→1.0）建立",
+      "单字体系统 — Noto Sans SC 覆盖全部层级，靠字重和大小建立节奏",
+      "克制动效 — 0.25s-0.5s cubic-bezier 过渡，无弹跳无弹性"
+    ],
+    "rules": [
+      {
+        "name": "The Signal Rule",
+        "body": "Beacon Green 在任一屏幕上占比不超过 10%。它是信标，不是环境光。空间留给作品，绿色只负责引导视线到关键交互点。",
+        "section": "colors"
+      },
+      {
+        "name": "The Border-Only Depth Rule",
+        "body": "层次不靠 box-shadow。卡片、输入框、面板之间的深度差异通过 border 透明度表达：默认 0.06 → hover 0.2-0.3 → active 1.0（Beacon Green）。这条规则直接呼应 PRODUCT.md 的 anti-PPT 要求 —— 幻灯片靠投影，Web 靠边框。",
+        "section": "colors"
+      },
+      {
+        "name": "The Display Accent Rule",
+        "body": "Noto Sans SC 是全站正文字体。唯一例外：首页 Hero 英文名使用 Noto Serif SC。Serif 不出现在任何其他位置——导航、卡片标题、正文、标签一律 Sans。这个限制让 Serif 的出现成为信号：这是页面唯一最重要的文字。",
+        "section": "typography"
+      },
+      {
+        "name": "The Bilingual Flip Rule",
+        "body": "中英双语标题仅在首页使用 rotateX 翻转动画。次级页面标题为标准静态文本。翻转动画 respect prefers-reduced-motion。",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "使用 Beacon Green (#00cc00) 作为唯一的品牌锚点色，控制在画面占比 ≤10%",
+      "使用 border 透明度变化（0.06/0.08/0.15/0.2/0.3）建立层次，替代阴影",
+      "保持纯黑 (#000) 背景，让作品图片成为视觉焦点",
+      "使用 Noto Sans SC 单一字体家族承载全部文字层级",
+      "保持动画在 0.25s-0.5s cubic-bezier 范围内，respect reduced-motion",
+      "首页双语标题使用 rotateX 翻转交互，次级页面保持静态"
+    ],
+    "donts": [
+      "使用 box-shadow 建立层次。此系统是 border-depth，不是 shadow-depth",
+      "使用 PPT 式排版：投影卡片、装饰性分割线、每个 section 上方的小号大写眉题、01/02/03 编号标记",
+      "使用 SaaS 落地页套路：渐变色大数字+小标签的 hero-metric 模板、均质卡片网格、奶油色/沙色背景",
+      "使用玻璃态模糊 (backdrop-filter blur)、渐变文字 (background-clip: text)、侧边彩条 (border-left > 1px)",
+      "引入绿色以外的第二品牌色。Beacon Green 是唯一的彩色信号",
+      "在 Display 层以外使用 Noto Serif SC。Serif 仅限首页 Hero 英文名",
+      "使用 emoji 作为图标替代品"
+    ]
+  }
+}

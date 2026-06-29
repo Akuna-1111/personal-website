@@ -1,3 +1,41 @@
+/* ===== Design Tokens ===== */
+:root {
+    --color-bg: #000;
+    --color-brand: #00cc00;
+    --color-brand-hover: #00dd00;
+    --color-brand-deep: #008800;
+    --color-text-primary: #e8ecf1;
+    --color-text-secondary: #9aa4b8;
+    --color-text-muted: #6e7a94;
+    --color-placeholder: #6a7a90;
+    --color-error: #ff6b6b;
+    --color-surface: rgba(255,255,255,0.02);
+    --color-surface-elevated: rgba(255,255,255,0.03);
+    --color-border: rgba(255,255,255,0.06);
+    --color-border-strong: rgba(255,255,255,0.08);
+    --color-border-brand: rgba(0,204,0,0.25);
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 14px;
+    --radius-2xl: 16px;
+    --radius-pill: 50px;
+    --font-xs: 0.75rem;
+    --font-sm: 0.85rem;
+    --font-base: 1rem;
+    --font-lg: 1.25rem;
+    --font-xl: clamp(1.5rem, 4vw, 2.25rem);
+    --font-display: clamp(2.5rem, 7vw, 5rem);
+    --ease-standard: cubic-bezier(0.33, 1, 0.68, 1);
+    --ease-fast: ease;
+    --duration-fast: 0.25s;
+    --duration-standard: 0.5s;
+    --z-nav: 1040;
+    --z-dropdown: 1041;
+    --z-overlay: 1050;
+    --z-popup: 1060;
+}
+
 /* ===== Custom Top Navigation (Restored) ===== */
 .top-navbar {
     position: fixed;
@@ -23,7 +61,7 @@
 .location-marker {
     display: flex;
     align-items: center;
-    color: #5a6680;
+    color: #6e7a94;
     font-size: 0.9rem;
     margin-left: auto;
 }
@@ -103,7 +141,7 @@
     display: none;
     background: none;
     border: none;
-    color: #5a6680;
+    color: #6e7a94;
     font-size: 1.2rem;
     cursor: pointer;
     padding: 8px;
@@ -151,7 +189,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #5a6680;
+    color: #6e7a94;
     font-size: 1rem;
     padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -278,10 +316,10 @@
     right: 28px;
     text-align: right;
     z-index: 2;
-    transition: bottom 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .project-card:hover .project-card-content {
-    bottom: 80px;
+    transform: translateY(-52px);
 }
 .project-card .project-card-cat {
     display: block;
@@ -309,13 +347,12 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(12px);
-    transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    transition: opacity 0.5s var(--ease-standard), visibility 0.5s var(--ease-standard), transform 0.5s var(--ease-standard);
 }
 .project-card:hover .project-card-caption {
     opacity: 1;
     visibility: visible;
-    bottom: 30px;
-    transform: translateY(0);
+    transform: translateY(-42px);
 }
 .project-card .project-card-btn {
     display: inline-block;
@@ -404,6 +441,38 @@
     opacity: 1;
 }
 
+/* ===== Capability Cards (replaces kayden-gradient-grid) ===== */
+.capability-row {
+    gap: 0;
+}
+.capability-card {
+    padding: 36px 28px;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: border-color 0.3s ease;
+}
+.capability-card:hover {
+    border-color: rgba(0,204,0,0.25);
+}
+.capability-icon {
+    font-size: 1.8rem;
+    color: #00cc00;
+    margin-bottom: 20px;
+}
+.capability-en {
+    font-size: 0.75rem;
+    color: #6e7a94;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+.capability-desc {
+    font-size: 0.82rem;
+    color: #9aa4b8;
+    line-height: 1.75;
+    margin: 0;
+}
+
 /* ===== Progress bar: breathing stretch effect ===== */
 .progress-bar {
     background-color: #00cc00 !important;
@@ -483,6 +552,64 @@
     border-color: rgba(255,255,255,0.15) !important;
 }
 
+/* ===== Focus Indicators ===== */
+:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.pay-method:focus-visible,
+.filter-btn:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    .progress-bar {
+        animation: none !important;
+    }
+    .bilingual .h-en,
+    .bilingual .h-zh {
+        transition: none !important;
+    }
+    .bilingual:hover .h-en {
+        transform: none;
+        opacity: 1;
+    }
+    .bilingual:hover .h-zh {
+        transform: none;
+        opacity: 0;
+    }
+    .scroll-swipe {
+        animation: none !important;
+    }
+    .cb-cursor:after {
+        animation: none !important;
+    }
+    .project-card:hover .project-card-img img {
+        transform: none;
+    }
+    .project-card:hover .project-card-content {
+        transform: none;
+    }
+    .project-card:hover .project-card-caption {
+        transform: translateY(12px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    .typewriter-text {
+        animation: none !important;
+        border-right-color: transparent !important;
+        max-width: none !important;
+        overflow: visible;
+    }
+}
+
 /* Body: pure black + prevent mobile overflow */
 html {
     overflow-x: hidden;
@@ -495,7 +622,7 @@ body {
 .heading h2 + p {
     margin-top: 0;
     text-align: center;
-    color: #5a6680;
+    color: #6e7a94;
 }
 
 /* ===== Scroll indicator responsive ===== */
@@ -513,7 +640,7 @@ body {
 }
 .scroll-swipe i {
     font-size: 1.2rem;
-    color: #5a6680;
+    color: #6e7a94;
 }
 @keyframes swipeBounce {
     0%, 100% { transform: translateY(0); opacity: 0.4; }
@@ -584,7 +711,7 @@ body {
 }
 .skill-flip-front img { width: 96px; height: 96px; }
 .skill-flip-front i { font-size: 96px !important; }
-.skill-flip-front span { font-size: 0.85rem; color: #5a6680; letter-spacing: 0.04em; }
+.skill-flip-front span { font-size: 0.85rem; color: #6e7a94; letter-spacing: 0.04em; }
 .skill-flip-back {
     transform: rotateY(180deg);
     border-radius: 12px;
@@ -605,7 +732,7 @@ body {
 }
 .skill-pct-label {
     font-size: 0.85rem;
-    color: #5a6680;
+    color: #6e7a94;
     letter-spacing: 0.04em;
 }
 
@@ -670,7 +797,7 @@ body {
     padding-top: 12px;
     margin: 0;
     font-size: 0.82rem;
-    color: #5a6680;
+    color: #6e7a94;
     line-height: 1.6;
 }
 
@@ -685,7 +812,7 @@ body {
 
 /* ===== Mouse Cursor ===== */
 .cb-cursor {
-    position: fixed; top: 0; left: 0; z-index: 9999;
+    position: fixed; top: 0; left: 0; z-index: 1050;
     pointer-events: none; will-change: transform;
     transition: opacity 0.3s;
     mix-blend-mode: difference;
@@ -751,7 +878,7 @@ body {
 
 /* ===== Contact popup ===== */
 .contact-popup-overlay {
-    position: fixed; inset: 0; z-index: 9999;
+    position: fixed; inset: 0; z-index: 1060;
     background: rgba(0,0,0,0.7);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; visibility: hidden;
@@ -778,7 +905,7 @@ body {
 .contact-popup-close {
     position: absolute; top: 10px; right: 14px;
     background: none; border: none;
-    color: #5a6680; font-size: 1.5rem;
+    color: #6e7a94; font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.2s;
 }
@@ -788,6 +915,25 @@ body {
 /* ===== Contact Form ===== */
 .contact-form {
     margin-top: 10px;
+}
+.contact-label {
+    display: block;
+    font-size: 0.78rem;
+    color: #9aa4b8;
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+.required-star {
+    color: #00cc00;
+    font-weight: 700;
+}
+.optional-tag {
+    font-size: 0.68rem;
+    color: #6e7a94;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 .contact-input {
     width: 100%;
@@ -802,7 +948,7 @@ body {
     transition: border-color 0.3s ease, background 0.3s ease;
 }
 .contact-input::placeholder {
-    color: #3a4450;
+    color: #6a7a90;
     font-size: 0.82rem;
 }
 .contact-input:focus {
@@ -866,7 +1012,7 @@ body {
 }
 .testimonial-author span {
     font-size: 0.75rem;
-    color: #5a6680;
+    color: #6e7a94;
 }
 
 /* ===== About Hero Photo ===== */
@@ -918,7 +1064,7 @@ body {
 }
 .philo-card p {
     font-size: 0.82rem;
-    color: #5a6680;
+    color: #6e7a94;
     line-height: 1.8;
     margin: 0;
 }
@@ -941,7 +1087,7 @@ body {
 }
 .ai-stat-label {
     font-size: 0.75rem;
-    color: #5a6680;
+    color: #6e7a94;
 }
 .ai-tools-bar {
     display: flex;
@@ -987,7 +1133,7 @@ body {
 }
 .service-card-header .service-en {
     font-size: 0.72rem;
-    color: #5a6680;
+    color: #6e7a94;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin: 0;
@@ -1017,7 +1163,7 @@ body {
 }
 .service-row p {
     font-size: 0.82rem;
-    color: #5a6680;
+    color: #6e7a94;
     line-height: 1.75;
     margin: 0;
 }
@@ -1080,7 +1226,7 @@ body {
 }
 .pay-plan-row p {
     font-size: 0.85rem;
-    color: #5a6680;
+    color: #6e7a94;
     line-height: 1.75;
     margin: 0;
 }
@@ -1139,7 +1285,7 @@ body {
 }
 .pay-method-desc {
     font-size: 0.72rem;
-    color: #5a6680;
+    color: #6e7a94;
 }
 .pay-method-amount {
     font-size: 1rem;
@@ -1169,7 +1315,7 @@ body {
 }
 .pay-calc-field label {
     font-size: 0.7rem;
-    color: #5a6680;
+    color: #6e7a94;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
@@ -1189,7 +1335,7 @@ body {
     border-color: #00cc00;
 }
 .pay-calc-field input::placeholder {
-    color: #3a4450;
+    color: #6a7a90;
     font-weight: 400;
     font-size: 0.78rem;
 }
@@ -1221,7 +1367,7 @@ body {
 }
 .pay-calc-label {
     font-size: 0.72rem;
-    color: #5a6680;
+    color: #6e7a94;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
@@ -1233,7 +1379,7 @@ body {
 .pay-calc-formula {
     width: 100%;
     font-size: 0.72rem;
-    color: #5a6680;
+    color: #6e7a94;
 }
 
 /* Order Summary */
@@ -1250,7 +1396,7 @@ body {
     align-items: center;
     padding: 8px 0;
     font-size: 0.82rem;
-    color: #5a6680;
+    color: #6e7a94;
 }
 .pay-summary-row span:last-child {
     color: #e8ecf1;
@@ -1372,7 +1518,7 @@ body {
 }
 .exp-tab .exp-tab-date {
     font-size: 0.78rem;
-    color: #5a6680;
+    color: #6e7a94;
 }
 .exp-tab.active .exp-tab-date {
     color: #00cc00;
@@ -1415,12 +1561,12 @@ body {
     margin: 0;
     padding-left: 18px;
     font-size: 0.85rem;
-    color: #5a6680;
+    color: #6e7a94;
     line-height: 2;
 }
 .exp-detail-panel .exp-daily {
     font-size: 0.85rem;
-    color: #5a6680;
+    color: #6e7a94;
     line-height: 1.9;
 }
 
@@ -1461,7 +1607,7 @@ body {
         top: 50%;
         transform: translateY(-50%);
         font-size: 0.65rem;
-        color: #5a6680;
+        color: #6e7a94;
         transition: transform 0.3s ease;
     }
     .exp-tab.active::after {
@@ -1500,12 +1646,12 @@ body {
         margin: 0 0 18px;
         padding-left: 18px;
         font-size: 0.82rem;
-        color: #5a6680;
+        color: #6e7a94;
         line-height: 1.9;
     }
     .exp-tab-body .exp-daily {
         font-size: 0.82rem;
-        color: #5a6680;
+        color: #6e7a94;
         line-height: 1.8;
     }
     /* Hide desktop detail panel on mobile */
