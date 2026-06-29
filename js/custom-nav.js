@@ -67,7 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Logo click - go to homepage
     var personalLogo = document.querySelector('.personal-logo');
     if (personalLogo) {
-        personalLogo.addEventListener('click', function() {
+        personalLogo.setAttribute('role', 'button');
+        personalLogo.setAttribute('tabindex', '0');
+        personalLogo.setAttribute('aria-label', '返回首页');
+        function goHome() {
             if (mobileDropdown && mobileDropdown.classList.contains('active')) {
                 mobileDropdown.classList.remove('active');
             }
@@ -77,6 +80,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 window.location.href = 'index.html';
+            }
+        }
+        personalLogo.addEventListener('click', goHome);
+        personalLogo.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                goHome();
             }
         });
         personalLogo.style.cursor = 'pointer';

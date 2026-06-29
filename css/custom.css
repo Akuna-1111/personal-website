@@ -234,6 +234,20 @@
     }
     .mobile-menu-btn {
         display: block;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    /* Touch target minimums */
+    .filter-btn {
+        min-height: 44px;
+        padding: 12px 22px;
+    }
+    /* Mobile readability */
+    body {
+        font-size: 16px;
+    }
+    .text-secondary, .contact-label, .capability-desc, .testimonial-text, .capability-en {
+        font-size: 0.9rem !important;
     }
     .mobile-dropdown.active {
         display: flex;
