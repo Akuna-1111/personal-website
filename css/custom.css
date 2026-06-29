@@ -256,20 +256,24 @@
 
 /* ===== Optimized Section Headings ===== */
 /* Center heading + kill ALL underlines */
-.heading h2.kayden-underline-left {
+.heading h2.kayden-underline-left,
+.heading h1.kayden-underline-left {
     display: table !important;
     margin-left: auto !important;
     margin-right: auto !important;
 }
-.heading h2.kayden-underline-left::after {
+.heading h2.kayden-underline-left::after,
+.heading h1.kayden-underline-left::after {
     display: none !important;
 }
 /* Kill all heading hover underlines */
-.heading h2 {
+.heading h2,
+.heading h1 {
     background-image: none !important;
     background-size: 0 0 !important;
 }
-.heading:hover h2 {
+.heading:hover h2,
+.heading:hover h1 {
     background-size: 0 0 !important;
 }
 
