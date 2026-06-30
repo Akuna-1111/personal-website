@@ -173,4 +173,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         animateCursor();
     }
+
+    // ---- Project Card Depth Parallax (rAF + lerp) ----
+    var cards = document.querySelectorAll('.project-card');
+    cards.forEach(function(card) {
+        var img = card.querySelector('.project-card-img img');
+        if (!img) return;
+
+        var targetX = 0, targetY = 0;   // target mouse offset
+        var currentX = 0, currentY = 0; // current smoothed offset
+        var active = false;
+        var rafId = null;
+
+        card.addEventListener('mousemove', function(e) {
+            var rect = card.getBoundingClientRect();
+            targetX = (e.clientX - rect.left) / rect.width - 0.5;
+            targetY = (e.clientY - rect.top) / rect.height - 0.5;
+            if (!active) {
+                active = true;
+                img.style.transition = 'none';
+                loop();
+            }
+        });
+
+        card.addEventListener('mouseleave', function() {
+            active = false;
+            targetX = 0;
+            targetY = 0;
+            if (rafId) cancelAnimationFrame(rafId);
+            img.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+            img.style.transform = 'translate(-2.5%, -2.5%)';
+        });
+
+        function loop() {
+            // lerp toward target
+            currentX += (targetX - currentX) * 0.12;
+            currentY += (targetY - currentY) * 0.12;
+            var px = -2.5 + currentX * 8;
+            var py = -2.5 + currentY * 8;
+            img.style.transform = 'translate(' + px + '%, ' + py + '%)';
+            if (active) {
+                rafId = requestAnimationFrame(loop);
+            }
+        }
+    });
 });
