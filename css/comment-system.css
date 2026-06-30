@@ -308,11 +308,20 @@
 @media (max-width: 768px) {
     .cs-root {
         padding: 28px 0;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
     .cs-form-wrap {
         flex-direction: column;
-        padding: 18px;
+        padding: 16px;
         gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto 32px;
+    }
+    .cs-form {
+        width: 100%;
     }
     .cs-avatar-preview {
         flex-direction: row;
@@ -327,6 +336,10 @@
         font-size: 0.82rem;
         max-width: none;
         color: #9aa4b8;
+    }
+    .cs-textarea {
+        width: 100%;
+        box-sizing: border-box;
     }
     .cs-form-actions {
         flex-wrap: wrap;
@@ -343,9 +356,14 @@
         width: 100%;
         justify-content: center;
     }
+    .cs-list {
+        width: 100%;
+    }
     .cs-item {
         padding: 14px;
         gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
     .cs-item-name {
         font-size: 0.82rem;
@@ -353,7 +371,15 @@
     .cs-item-content {
         font-size: 0.85rem;
     }
+    .cs-reply-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .cs-reply-textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
     .cs-bullet-canvas {
-        display: none; /* 移动端关闭弹幕，避免性能问题 */
+        display: none;
     }
 }

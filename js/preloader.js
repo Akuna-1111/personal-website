@@ -46,7 +46,7 @@ After loaded function.
 function loaded(elem)
 {
     
-    $preloader = $("#preloader");
+    var $preloader = $("#preloader");
 
     var event = new CustomEvent('kaydenLoaded');
 

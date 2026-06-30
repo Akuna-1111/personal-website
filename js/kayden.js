@@ -57,7 +57,7 @@ $('body').on("kaydenLoaded", function(){
     }
 
     //ScrollSpy
-    $('a.kayden_scrollspy[href^="#"]:not([href="#"]').on('click', function(event){
+    $('a.kayden_scrollspy[href^="#"]:not([href="#"])').on('click', function(event){
 
         var $anchor = $(this);
         var offset = parseInt($('body').data('offset'));
@@ -81,7 +81,7 @@ $('body').on("kaydenLoaded", function(){
         }
     });
 
-    $('#return-to-top').on('click', function() {
+    $('#return-to-top').on('click', function(event) {
         event.preventDefault();
         $('body,html').animate({
             scrollTop : 0

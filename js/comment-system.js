@@ -47,6 +47,10 @@
     function injectCommentSection() {
         var container = document.getElementById('comment-section-mount');
         if (!container) return;
+        if (typeof NameGenerator === 'undefined' || typeof AvatarGenerator === 'undefined') {
+            container.innerHTML = '<div class="cs-root"><div class="cs-empty"><p>留言系统载入中，请刷新页面重试</p></div></div>';
+            return;
+        }
 
         var nickname = NameGenerator.generate();
         var seed = NameGenerator.avatarSeed(nickname);
@@ -158,7 +162,8 @@
             console.error('Reply error:', err);
             alert('发送失败，请稍后重试');
         }).finally(function() {
-            // Allow re-submit after load
+            var btn = formEl.querySelector('.cs-reply-send');
+            if (btn) btn.disabled = false;
         });
     }
 
@@ -202,7 +207,7 @@
 
             html +=
                 '<div class="cs-item' + (isReply ? ' cs-item-reply' : '') + '" data-comment-id="' + c.id + '">' +
-                    '<img src="' + avatarUrl + '" width="' + AVATAR_SIZE + '" height="' + AVATAR_SIZE + '" alt="' + c.nickname + '" class="cs-avatar">' +
+                    '<img src="' + avatarUrl + '" width="' + AVATAR_SIZE + '" height="' + AVATAR_SIZE + '" alt="' + escapeHtml(c.nickname) + '" class="cs-avatar">' +
                     '<div class="cs-item-body">' +
                         '<div class="cs-item-header">' +
                             '<strong class="cs-item-name">' + escapeHtml(c.nickname) + '</strong>' +
@@ -412,7 +417,8 @@
     function formatTime(iso) {
         if (!iso) return '';
         var d = new Date(iso);
-        var diff = new Date() - d;
+        if (isNaN(d.getTime())) return '';
+        var diff = Date.now() - d.getTime();
         if (diff < 60000) return '刚刚';
         if (diff < 3600000) return Math.floor(diff / 60000) + '分钟前';
         if (diff < 86400000) return Math.floor(diff / 3600000) + '小时前';

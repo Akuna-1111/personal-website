@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var emailBtn = document.querySelector('.contact-icon-email');
     if (emailBtn) { emailBtn.setAttribute('aria-label', '邮箱 876253104@qq.com'); emailBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        showPopup('<p class="mb-2" style="color:#00cc00;font-size:0.75rem;letter-spacing:0.1em;">EMAIL</p><p class="fs-5 mb-3">876253104@qq.com</p><button class="btn btn-sm btn-outline-primary" onclick="navigator.clipboard.writeText(\'876253104@qq.com\');this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',2000)">Copy</button>');
+        showPopup('<p class="mb-2" style="color:#00cc00;font-size:0.75rem;letter-spacing:0.1em;">EMAIL</p><p class="fs-5 mb-3">876253104@qq.com</p><button class="btn btn-sm btn-outline-primary" onclick="if(navigator.clipboard){navigator.clipboard.writeText(\'876253104@qq.com\');this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',2000)}">Copy</button>');
     }); }
 
     // QQ
     var qqBtn = document.querySelector('.contact-icon-qq');
     if (qqBtn) { qqBtn.setAttribute('aria-label', 'QQ 876253104'); qqBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        showPopup('<p class="mb-2" style="color:#00cc00;font-size:0.75rem;letter-spacing:0.1em;">QQ</p><p class="fs-5 mb-3">876253104</p><button class="btn btn-sm btn-outline-primary" onclick="navigator.clipboard.writeText(\'876253104\');this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',2000)">Copy</button>');
+        showPopup('<p class="mb-2" style="color:#00cc00;font-size:0.75rem;letter-spacing:0.1em;">QQ</p><p class="fs-5 mb-3">876253104</p><button class="btn btn-sm btn-outline-primary" onclick="if(navigator.clipboard){navigator.clipboard.writeText(\'876253104\');this.textContent=\'Copied!\';setTimeout(()=>this.textContent=\'Copy\',2000)}">Copy</button>');
     }); }
 
     // WeChat

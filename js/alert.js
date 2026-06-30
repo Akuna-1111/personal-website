@@ -25,7 +25,7 @@ function remove_alert()
 function custom_alert(message, type) 
 {
     $('.custom-alert').remove();
-    $alert = $('<div>'+message+'</div>');
+    var $alert = $('<div>'+message+'</div>');
     $alert.addClass("custom-alert");
 
     if(type == "success")
