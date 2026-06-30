@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="css/devicon.min.css">
                 <link rel="stylesheet" href="css/kayden.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
@@ -149,7 +149,9 @@
                 <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase bilingual"><span class="h-en">AI Efficiency</span><span class="h-zh">AI 效能提升</span></h2>
                 <p class="text-secondary mb-4" style="font-size:0.8rem;">AI 不是替代设计师，而是让设计师聚焦更有价值的创意决策</p>
             </div>
-            <div class="row gy-4 text-center justify-content-center">
+
+            <!-- 4 个效能指标 -->
+            <div class="row gy-4 text-center justify-content-center mb-5">
                 <div class="col-lg-2 col-md-3 col-6" data-aos="fade-up" data-aos-duration="400">
                     <div class="ai-stat">
                         <span class="ai-stat-num">50<span>%+</span></span>
@@ -164,7 +166,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-6" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
                     <div class="ai-stat">
-                        <span class="ai-stat-num">6<span>+</span></span>
+                        <span class="ai-stat-num">7<span>+</span></span>
                         <span class="ai-stat-label">AI 工具深度集成</span>
                     </div>
                 </div>
@@ -175,18 +177,54 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5 justify-content-center">
-                <div class="col-lg-8">
-                    <div class="ai-tools-bar">
-                        <span class="ai-tool-tag">ComfyUI</span>
-                        <span class="ai-tool-tag">Stable Diffusion</span>
-                        <span class="ai-tool-tag">Claude Code</span>
-                        <span class="ai-tool-tag">DeepSeek</span>
-                        <span class="ai-tool-tag">Gemini</span>
-                        <span class="ai-tool-tag">Flux</span>
-                        <span class="ai-tool-tag">LM Studio</span>
+
+            <!-- 4 张详解卡片 -->
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="500">
+                    <div class="ai-detail-card">
+                        <div class="ai-detail-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="ai-detail-body">
+                            <h4>方案构思耗时缩短 50%+</h4>
+                            <p>借助 Claude Code / DeepSeek / Gemini 等多模型交叉验证，在项目初期快速生成多套概念方向。AI 辅助头脑风暴 + 人工筛选聚焦，将原本 2-3 天的前期构思压缩至半天内完成。</p>
+                        </div>
                     </div>
-                    <p class="text-center mt-3" style="font-size:0.78rem;color:#6e7a94;">室内设计 / IP设计 / 风格转换 — 三大自研工作流覆盖核心业务场景</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="50">
+                    <div class="ai-detail-card">
+                        <div class="ai-detail-icon"><i class="fas fa-image"></i></div>
+                        <div class="ai-detail-body">
+                            <h4>效果图产出效率提升 4x</h4>
+                            <p>ComfyUI + Stable Diffusion / Flux 构建的自动化出图管线，将单张高质量效果图的平均产出时间从 4 小时降至 1 小时以内。支持批量渲染、风格切换、局部重绘。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                    <div class="ai-detail-card">
+                        <div class="ai-detail-icon"><i class="fas fa-cubes"></i></div>
+                        <div class="ai-detail-body">
+                            <h4>7+ AI 工具深度集成</h4>
+                            <p>日常设计工作流中深度整合 ComfyUI、Stable Diffusion、Claude Code、DeepSeek、Gemini、Flux、LM Studio 等工具，覆盖图像生成、代码辅助、文档撰写、本地推理等多种场景。</p>
+                            <div class="ai-tools-bar mt-3">
+                                <span class="ai-tool-tag">ComfyUI</span>
+                                <span class="ai-tool-tag">Stable Diffusion</span>
+                                <span class="ai-tool-tag">Claude Code</span>
+                                <span class="ai-tool-tag">DeepSeek</span>
+                                <span class="ai-tool-tag">Gemini</span>
+                                <span class="ai-tool-tag">Flux</span>
+                                <span class="ai-tool-tag">LM Studio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150">
+                    <div class="ai-detail-card ai-workflow-card">
+                        <div class="ai-detail-icon"><i class="fas fa-diagram-project"></i></div>
+                        <div class="ai-detail-body">
+                            <h4>3 套自研 AI 工作流</h4>
+                            <p>针对展览设计核心场景定制：室内空间概念生成、IP/吉祥物设计、风格迁移与材质替换。每套工作流经过数十次项目迭代验证。</p>
+                            <a href="ai-workflow.html" class="btn btn-outline-primary btn-sm mt-2">查看工作流范例 <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

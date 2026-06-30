@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/qr-wechat.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 工作流范例 - 郑彬坤</title>
+    <meta name="description" content="郑彬坤自研AI设计工作流：从手绘草图到AI效果图的完整链路演示。室内空间概念生成、IP吉祥物设计、风格迁移。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/kayden.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .wf-pipeline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            padding: 30px 0;
+        }
+        .wf-step {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            width: 180px;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .wf-step:hover {
+            border-color: rgba(0,204,0,0.3);
+            transform: translateY(-3px);
+        }
+        .wf-step-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(0,204,0,0.06);
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #00cc00;
+        }
+        .wf-step-num {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #00cc00;
+            margin-bottom: 6px;
+        }
+        .wf-step h4 {
+            font-size: 0.95rem;
+            color: #e8ecf1;
+            margin-bottom: 6px;
+        }
+        .wf-step p {
+            font-size: 0.75rem;
+            color: #6e7a94;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .wf-arrow {
+            font-size: 1.5rem;
+            color: rgba(0,204,0,0.3);
+            margin: 0 -8px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        .wf-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 24px 28px;
+        }
+        .wf-box h3 {
+            font-size: 1rem;
+            color: #e8ecf1;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .wf-tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .wf-tool-pill {
+            font-size: 0.78rem;
+            padding: 5px 14px;
+            border-radius: 50px;
+            color: #9aa4b8;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .wf-tool-pill.brand {
+            color: #00cc00;
+            border-color: rgba(0,204,0,0.2);
+            background: rgba(0,204,0,0.06);
+        }
+        @media (max-width: 768px) {
+            .wf-pipeline {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .wf-step {
+                width: 100%;
+                max-width: 280px;
+            }
+            .wf-arrow {
+                transform: rotate(90deg);
+                margin: -6px 0;
+            }
+            .wf-box {
+                padding: 18px 16px;
+            }
+            .wf-tool-pill {
+                font-size: 0.82rem;
+                padding: 6px 14px;
+            }
+        }
+    </style>
+</head>
+<body data-offset="102">
+    <div id="preloader"><div class="text-center w-100"><div class="loader"></div></div></div>
+
+    <nav class="top-navbar">
+        <div class="nav-container">
+            <div class="personal-logo">
+                <div class="logo-circle"><span class="logo-letter">Z</span></div>
+                <span class="logo-name">ZHENG BIN KUN</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">首页</a>
+                <a href="projects.html">项目案例</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">专案定制</a>
+                <a href="index.html#contact">合作联系</a>
+            </div>
+            <div class="location-marker"><i class="fas fa-map-marker-alt"></i><span>中国·厦门</span></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <div class="mobile-dropdown" id="mobileDropdown">
+                <a href="index.html">首页</a>
+                <a href="projects.html">项目案例</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">专案定制</a>
+                <a href="index.html#contact">合作联系</a>
+                <div class="mobile-location"><i class="fas fa-map-marker-alt"></i><span>中国·厦门</span></div>
+            </div>
+        </div>
+    </nav>
+<main>
+
+    <section style="padding-top:140px; padding-bottom:40px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <span class="badge outline-badge me-2">AI Workflow</span>
+                    <span class="badge outline-badge me-2">ComfyUI</span>
+                    <span class="badge outline-badge me-2">Stable Diffusion</span>
+                    <h1 class="fw-bold mt-3 mb-3" style="font-size: calc(1.6rem + 1.5vw);">自研 AI 设计工作流</h1>
+                    <p class="text-secondary" style="font-size:0.9rem; line-height:1.8; max-width:600px; margin:0 auto;">
+                        三套经过数十次项目实战验证的 AI 辅助设计管线。<br>覆盖室内空间概念生成、IP/吉祥物设计、风格迁移与材质替换。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow 1: 室内空间概念生成 -->
+    <section style="padding-top:40px; padding-bottom:60px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="wf-box mb-5">
+                        <h3><span class="wf-step-icon" style="width:36px;height:36px;font-size:1rem;margin:0;">1</span> 室内空间概念生成</h3>
+                        <p class="text-secondary mb-4" style="font-size:0.85rem;">从设计需求文档到多方案概念效果图的全自动管线</p>
+                        <div class="wf-pipeline">
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 1</div>
+                                <div class="wf-step-icon"><i class="fas fa-file-alt"></i></div>
+                                <h4>需求输入</h4>
+                                <p>设计需求文档 + 参考图 + 空间尺寸</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 2</div>
+                                <div class="wf-step-icon"><i class="fas fa-brain"></i></div>
+                                <h4>AI 解析</h4>
+                                <p>Claude / DeepSeek 提取关键词与风格方向</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 3</div>
+                                <div class="wf-step-icon"><i class="fas fa-cogs"></i></div>
+                                <h4>批量生成</h4>
+                                <p>ComfyUI + SD/Flux 管线输出 6-12 套方案</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 4</div>
+                                <div class="wf-step-icon"><i class="fas fa-check-circle"></i></div>
+                                <h4>方案交付</h4>
+                                <p>人工筛选 + 精修 → 客户提案</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workflow 2: IP/吉祥物设计 -->
+                    <div class="wf-box mb-5">
+                        <h3><span class="wf-step-icon" style="width:36px;height:36px;font-size:1rem;margin:0;">2</span> IP/吉祥物设计</h3>
+                        <p class="text-secondary mb-4" style="font-size:0.85rem;">从角色设定到多造型多表情的快速生成与迭代</p>
+                        <div class="wf-pipeline">
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 1</div>
+                                <div class="wf-step-icon"><i class="fas fa-pencil-alt"></i></div>
+                                <h4>角色设定</h4>
+                                <p>品牌调性 + 角色描述 + 参考形象</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 2</div>
+                                <div class="wf-step-icon"><i class="fas fa-drafting-compass"></i></div>
+                                <h4>线稿生成</h4>
+                                <p>ComfyUI ControlNet 线稿控制 + 多角度</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 3</div>
+                                <div class="wf-step-icon"><i class="fas fa-palette"></i></div>
+                                <h4>上色变体</h4>
+                                <p>Flux IP-Adapter 约束 + 多配色方案</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 4</div>
+                                <div class="wf-step-icon"><i class="fas fa-layer-group"></i></div>
+                                <h4>表情/动作</h4>
+                                <p>批量生成多表情动作的完整角色包</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workflow 3: 风格迁移 -->
+                    <div class="wf-box">
+                        <h3><span class="wf-step-icon" style="width:36px;height:36px;font-size:1rem;margin:0;">3</span> 风格迁移与材质替换</h3>
+                        <p class="text-secondary mb-4" style="font-size:0.85rem;">保持空间结构不变，快速切换不同设计风格进行比对</p>
+                        <div class="wf-pipeline">
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 1</div>
+                                <div class="wf-step-icon"><i class="fas fa-cube"></i></div>
+                                <h4>基础模型</h4>
+                                <p>3Ds Max 白模 + 空间线框结构</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 2</div>
+                                <div class="wf-step-icon"><i class="fas fa-images"></i></div>
+                                <h4>风格参考</h4>
+                                <p>客户指定风格参考图 + 材质样本</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 3</div>
+                                <div class="wf-step-icon"><i class="fas fa-magic"></i></div>
+                                <h4>AI 迁移</h4>
+                                <p>ComfyUI IP-Adapter + ControlNet 深度控制</p>
+                            </div>
+                            <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="wf-step">
+                                <div class="wf-step-num">Step 4</div>
+                                <div class="wf-step-icon"><i class="fas fa-sliders-h"></i></div>
+                                <h4>多风格对比</h4>
+                                <p>同步输出 3-5 套风格方案供客户选择</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tool Stack -->
+                    <div class="wf-box mt-5">
+                        <h3><i class="fas fa-toolbox me-2" style="color:#00cc00;"></i>工具链总览</h3>
+                        <div class="wf-tool-list mt-3">
+                            <span class="wf-tool-pill brand">ComfyUI</span>
+                            <span class="wf-tool-pill brand">Stable Diffusion 1.5 / XL</span>
+                            <span class="wf-tool-pill brand">Flux.1 Dev</span>
+                            <span class="wf-tool-pill">ControlNet (Canny / Depth / Lineart)</span>
+                            <span class="wf-tool-pill">IP-Adapter</span>
+                            <span class="wf-tool-pill brand">Claude Code</span>
+                            <span class="wf-tool-pill brand">DeepSeek</span>
+                            <span class="wf-tool-pill">LM Studio</span>
+                            <span class="wf-tool-pill">3Ds Max</span>
+                            <span class="wf-tool-pill">Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top:20px; padding-bottom:40px;">
+        <div class="container text-center">
+            <a href="about.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left me-2"></i>返回关于我</a>
+        </div>
+    </section>
+
+</main>
+<footer class="kayden-footer py-4">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center py-3">
+                <ul class="social-links list-inline mb-4">
+                    <li class="list-inline-item"><a href="#" class="contact-icon-phone" title="电话"><i class="fas fa-phone"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-email" title="邮箱"><i class="fas fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-wechat" title="微信"><i class="fab fa-weixin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="contact-icon-qq" title="QQ"><i class="fab fa-qq"></i></a></li>
+                </ul>
+                <p class="text-center m-0 text-secondary">郑彬坤 &copy; 2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="toTop d-inline" id="return-to-top" aria-label="返回顶部"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.appear.min.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/kayden.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/contact-popup.js"></script>
+</body>
+</html>
