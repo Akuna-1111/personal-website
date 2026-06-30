@@ -1,0 +1,359 @@
+/* ===== 留言系统 + 图片弹幕 — 暗色策展人空间风格 ===== */
+
+/* ---- 根容器 ---- */
+.cs-root {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.cs-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+.cs-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e8ecf1;
+    margin-bottom: 6px;
+}
+.cs-subtitle {
+    font-size: 0.78rem;
+    color: #6e7a94;
+    margin: 0;
+}
+
+/* ---- 发表表单 ---- */
+.cs-form-wrap {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+}
+.cs-avatar-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.cs-avatar-preview img {
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    width: 44px;
+    height: 44px;
+}
+.cs-nickname-preview {
+    font-size: 0.68rem;
+    color: #6e7a94;
+    max-width: 60px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cs-form {
+    flex: 1;
+    min-width: 0;
+}
+.cs-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #e8ecf1;
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+    box-sizing: border-box;
+}
+.cs-textarea:focus {
+    border-color: rgba(0,204,0,0.25);
+    background: rgba(0,204,0,0.04);
+    outline: none;
+}
+.cs-textarea::placeholder {
+    color: #6a7a90;
+    font-size: 0.82rem;
+}
+.cs-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+.cs-char-count {
+    font-size: 0.72rem;
+    color: #6e7a94;
+}
+.cs-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    color: #9aa4b8;
+    font-size: 0.75rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.cs-btn-ghost:hover {
+    border-color: #00cc00;
+    color: #00cc00;
+    background: rgba(0,204,0,0.06);
+}
+.cs-btn-submit {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 22px;
+    background: #00cc00;
+    color: #000;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+    white-space: nowrap;
+}
+.cs-btn-submit:hover {
+    background: #00dd00;
+    transform: scale(1.02);
+}
+.cs-btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ---- 留言列表 ---- */
+.cs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.cs-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6e7a94;
+}
+.cs-empty i {
+    font-size: 2rem;
+    color: rgba(0,204,0,0.15);
+    margin-bottom: 12px;
+    display: block;
+}
+.cs-empty p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+.cs-item {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    transition: border-color 0.25s ease;
+}
+.cs-item:hover {
+    border-color: rgba(0,204,0,0.15);
+}
+.cs-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    flex-shrink: 0;
+}
+.cs-item-body {
+    flex: 1;
+    min-width: 0;
+}
+.cs-item-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+.cs-item-name {
+    font-size: 0.85rem;
+    color: #e8ecf1;
+    font-weight: 600;
+}
+.cs-item-time {
+    font-size: 0.7rem;
+    color: #6e7a94;
+    flex-shrink: 0;
+}
+.cs-item-content {
+    font-size: 0.9rem;
+    color: #9aa4b8;
+    line-height: 1.75;
+    margin: 0;
+    word-break: break-word;
+}
+
+/* ---- 回复 ---- */
+.cs-item-reply {
+    padding-left: 56px;
+    border-left: 1px solid rgba(255,255,255,0.06);
+}
+.cs-reply-mention {
+    color: #00cc00;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    margin-right: 2px;
+}
+.cs-reply-mention em {
+    font-style: normal;
+    font-weight: 600;
+}
+.cs-reply-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #6e7a94;
+    font-size: 0.72rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.cs-reply-btn:hover {
+    color: #00cc00;
+}
+.cs-reply-form {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+.cs-reply-textarea {
+    width: 100%;
+    min-height: 52px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    font-size: 0.82rem;
+    color: #e8ecf1;
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.25s ease;
+    box-sizing: border-box;
+}
+.cs-reply-textarea:focus {
+    border-color: rgba(0,204,0,0.25);
+    background: rgba(0,204,0,0.04);
+    outline: none;
+}
+.cs-reply-textarea::placeholder {
+    color: #6a7a90;
+    font-size: 0.78rem;
+}
+.cs-reply-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 6px;
+}
+.cs-reply-cancel {
+    padding: 4px 12px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    color: #9aa4b8;
+    font-size: 0.72rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.cs-reply-cancel:hover {
+    border-color: rgba(255,255,255,0.2);
+    color: #e8ecf1;
+}
+
+@media (max-width: 768px) {
+    .cs-item-reply {
+        padding-left: 28px;
+    }
+    .cs-reply-textarea {
+        font-size: 16px;
+    }
+}
+
+/* ---- 弹幕 Canvas 覆盖层 ---- */
+.cs-bullet-canvas {
+    border-radius: inherit;
+}
+
+/* ---- 移动端适配 ---- */
+@media (max-width: 768px) {
+    .cs-root {
+        padding: 28px 0;
+    }
+    .cs-form-wrap {
+        flex-direction: column;
+        padding: 18px;
+        gap: 12px;
+    }
+    .cs-avatar-preview {
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+    }
+    .cs-avatar-preview img {
+        width: 36px;
+        height: 36px;
+    }
+    .cs-nickname-preview {
+        font-size: 0.82rem;
+        max-width: none;
+        color: #9aa4b8;
+    }
+    .cs-form-actions {
+        flex-wrap: wrap;
+    }
+    .cs-btn-ghost {
+        order: 1;
+    }
+    .cs-char-count {
+        order: 2;
+        margin-left: auto;
+    }
+    .cs-btn-submit {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    .cs-item {
+        padding: 14px;
+        gap: 10px;
+    }
+    .cs-item-name {
+        font-size: 0.82rem;
+    }
+    .cs-item-content {
+        font-size: 0.85rem;
+    }
+    .cs-bullet-canvas {
+        display: none; /* 移动端关闭弹幕，避免性能问题 */
+    }
+}

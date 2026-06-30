@@ -45,13 +45,16 @@ $('body').on("kaydenLoaded", function(){
     });
 
     //Typed JS
-    var typed = new Typed('.typed_text', {
-        strings: $('.typed_text').data('options').split(","),
-        typeSpeed: 90,
-        backDelay: 2000,
-        backSpeed: 40,
-        loop: true
-    });
+    var options = $('.typed_text').data('options');
+    if (options) {
+        var typed = new Typed('.typed_text', {
+            strings: options.split(","),
+            typeSpeed: 90,
+            backDelay: 2000,
+            backSpeed: 40,
+            loop: true
+        });
+    }
 
     //ScrollSpy
     $('a.kayden_scrollspy[href^="#"]:not([href="#"]').on('click', function(event){

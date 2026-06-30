@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/kayden.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/comment-system.css">
 </head>
-<body data-offset="102">
+<body data-offset="102" data-project-slug="project-liming">
     <div id="preloader"><div class="text-center w-100"><div class="loader"></div></div></div>
 
     <!-- Top Navigation Bar -->
@@ -95,31 +96,13 @@
             </div>
         </div>
     </section>
-
-    <section id="contact" style="padding-top:100px;">
+<!-- 访客留言区 -->
+    <section id="comments" style="padding-top:80px; padding-bottom:80px;">
         <div class="container">
-            <div class="heading text-center mb-5">
-                <h2 class="fs-3 kayden-underline-left mb-2 fw-bold text-uppercase ">合作联系</h2>
-                
-            </div>
-            <div class="section-body">
-                <div class="row gy-5 justify-content-center">
-                    <div class="col-md-5 text-center">
-                        <img src="image/qr-wechat.webp" loading="lazy" alt="微信扫码" class="rounded-3 mb-3" style="width:180px;height:180px;">
-                        <p class="text-secondary small-font-size">扫码添加微信</p>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="contact-details d-flex flex-row align-items-center mb-4"><div class="cd-icon fs-2 me-4"><i class="fas fa-envelope"></i></div><div class="cd-info fs-6"><a href="mailto:876253104@qq.com" class="text-white text-decoration-none">876253104@qq.com</a></div></div>
-                        <div class="contact-details d-flex flex-row align-items-center mb-4"><div class="cd-icon fs-2 me-4"><i class="fab fa-qq"></i></div><div class="cd-info fs-6"><span>876253104</span></div></div>
-                        <div class="contact-details d-flex flex-row align-items-center mb-4"><div class="cd-icon fs-2 me-4"><i class="fab fa-weixin"></i></div><div class="cd-info fs-6"><span>zbk876253104</span></div></div>
-                        <div class="contact-details d-flex flex-row align-items-center"><div class="cd-icon fs-2 me-4"><i class="fas fa-map-marker-alt"></i></div><div class="cd-info fs-6"><span>中国·厦门</span></div></div>
-                    </div>
-                </div>
-            </div>
+            <div id="comment-section-mount"></div>
         </div>
     </section>
-
-    </main>
+</main>
 <footer class="kayden-footer py-4">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center py-3">
@@ -149,5 +132,11 @@
     <script src="js/kayden.js"></script>
     <script src="js/custom-nav.js"></script>
     <script src="js/contact-popup.js"></script>
+    <!-- Comment System -->
+    
+    <script src="js/supabase-client.js"></script>
+    <script src="js/name-generator.js"></script>
+    <script src="js/avatar-generator.js"></script>
+    <script src="js/comment-system.js"></script>
 </body>
 </html>
